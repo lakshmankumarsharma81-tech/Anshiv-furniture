@@ -1,3 +1,7 @@
+
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -5,350 +9,440 @@
 
 <style>
 *{
-    box-sizing:border-box;
-    scroll-behavior:smooth;
+box-sizing:border-box;
+scroll-behavior:smooth;
 }
 
 body{
-    margin:0;
-    font-family:Arial,sans-serif;
-    background:#f5f5f5;
-    color:#333;
+margin:0;
+font-family:Arial,sans-serif;
+background:#f5f5f5;
+color:#333;
 }
 
 /* HEADER */
 header{
-    background:#4b2e1f;
-    color:white;
-    text-align:center;
-    padding:28px 10px;
+background:#4b2e1f;
+color:white;
+text-align:center;
+padding:28px 10px;
 }
 
 header h1{
-    margin:0;
-    font-size:34px;
+margin:0;
+font-size:34px;
 }
 
 header p{
-    margin:8px 0 0;
+margin:8px 0 0;
 }
 
 /* NAVIGATION */
 nav{
-    background:#2d1b12;
-    text-align:center;
-    padding:15px;
-    position:sticky;
-    top:0;
-    z-index:10;
+background:#2d1b12;
+text-align:center;
+padding:15px;
+position:sticky;
+top:0;
+z-index:10;
 }
 
 nav a{
-    color:white;
-    text-decoration:none;
-    margin:0 10px;
-    font-weight:bold;
+color:white;
+text-decoration:none;
+margin:0 10px;
+font-weight:bold;
 }
 
 /* HOME */
 .home{
-    min-height:350px;
-    background:url("https://images.unsplash.com/photo-1600210492486-724fe5c67fb0")
-    center/cover;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-    padding:30px;
+min-height:350px;
+background:url("https://images.unsplash.com/photo-1600210492486-724fe5c67fb0")
+center/cover;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:30px;
 }
 
 .home-box{
-    background:rgba(0,0,0,.65);
-    color:white;
-    padding:30px;
-    border-radius:15px;
+background:rgba(0,0,0,.65);
+color:white;
+padding:30px;
+border-radius:15px;
 }
 
 .home-box h2{
-    font-size:36px;
-    margin:5px;
+font-size:36px;
+margin:5px;
 }
 
 .home-box p{
-    font-size:18px;
+font-size:18px;
 }
 
 .shop-btn{
-    display:inline-block;
-    background:#d2691e;
-    color:white;
-    padding:12px 25px;
-    border-radius:7px;
-    text-decoration:none;
-    margin-top:10px;
+display:inline-block;
+background:#d2691e;
+color:white;
+padding:12px 25px;
+border-radius:7px;
+text-decoration:none;
+margin-top:10px;
 }
 
 /* PRODUCTS */
 .title{
-    text-align:center;
-    color:#4b2e1f;
-    margin-top:40px;
+text-align:center;
+color:#4b2e1f;
+margin-top:40px;
 }
 
 .products{
-    display:flex;
-    justify-content:center;
-    gap:20px;
-    flex-wrap:wrap;
-    padding:20px;
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+padding:20px;
 }
 
 .card{
-    background:white;
-    width:280px;
-    padding:15px;
-    border-radius:12px;
-    box-shadow:0 4px 12px rgba(0,0,0,.15);
-    text-align:center;
-    cursor:pointer;
-    transition:.3s;
+background:white;
+width:280px;
+padding:15px;
+border-radius:12px;
+box-shadow:0 4px 12px rgba(0,0,0,.15);
+text-align:center;
+cursor:pointer;
+transition:.3s;
 }
 
 .card:hover{
-    transform:translateY(-5px);
-    box-shadow:0 7px 18px rgba(0,0,0,.25);
+transform:translateY(-5px);
+box-shadow:0 7px 18px rgba(0,0,0,.25);
 }
 
 .card img{
-    width:100%;
-    height:200px;
-    object-fit:cover;
-    border-radius:10px;
+width:100%;
+height:200px;
+object-fit:cover;
+border-radius:10px;
 }
 
 .card h3{
-    color:#4b2e1f;
-    font-size:22px;
+color:#4b2e1f;
+font-size:22px;
 }
 
 .price{
-    color:#b45f06;
-    font-size:19px;
-    font-weight:bold;
+color:#b45f06;
+font-size:19px;
+font-weight:bold;
 }
 
 .available{
-    color:green;
-    font-weight:bold;
-    margin:8px 0;
+color:green;
+font-weight:bold;
+margin:8px 0;
 }
 
 .buy-btn{
-    background:#d2691e;
-    color:white;
-    border:none;
-    padding:11px 24px;
-    border-radius:7px;
-    cursor:pointer;
-    font-size:16px;
+background:#d2691e;
+color:white;
+border:none;
+padding:11px 24px;
+border-radius:7px;
+cursor:pointer;
+font-size:16px;
 }
 
 /* PRODUCT DETAILS POPUP */
 #productModal{
-    display:none;
-    position:fixed;
-    z-index:100;
-    left:0;
-    top:0;
-    width:100%;
-    height:100%;
-    background:rgba(0,0,0,.75);
-    padding:20px;
-    overflow:auto;
+display:none;
+position:fixed;
+z-index:100;
+left:0;
+top:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.75);
+padding:20px;
+overflow:auto;
 }
 
 .modal-box{
-    background:white;
-    max-width:500px;
-    margin:40px auto;
-    padding:20px;
-    border-radius:15px;
-    text-align:center;
-    position:relative;
+background:white;
+max-width:500px;
+margin:40px auto;
+padding:20px;
+border-radius:15px;
+text-align:center;
+position:relative;
 }
 
 .modal-box img{
-    width:100%;
-    max-height:300px;
-    object-fit:cover;
-    border-radius:12px;
+width:100%;
+max-height:300px;
+object-fit:cover;
+border-radius:12px;
 }
 
 .modal-box h2{
-    color:#4b2e1f;
-    margin-bottom:10px;
+color:#4b2e1f;
+margin-bottom:10px;
 }
 
 .modal-price{
-    color:#b45f06;
-    font-size:23px;
-    font-weight:bold;
+color:#b45f06;
+font-size:23px;
+font-weight:bold;
 }
 
 .modal-available{
-    color:green;
-    font-size:18px;
-    font-weight:bold;
-    margin:12px;
+color:green;
+font-size:18px;
+font-weight:bold;
+margin:12px;
 }
 
 .close-btn{
-    position:absolute;
-    right:15px;
-    top:10px;
-    font-size:30px;
-    cursor:pointer;
-    color:#555;
+position:absolute;
+right:15px;
+top:10px;
+font-size:30px;
+cursor:pointer;
+color:#555;
 }
 
 .modal-buy{
-    background:#d2691e;
-    color:white;
-    border:none;
-    padding:13px 30px;
-    border-radius:7px;
-    font-size:17px;
-    cursor:pointer;
+background:#d2691e;
+color:white;
+border:none;
+padding:13px 30px;
+border-radius:7px;
+font-size:17px;
+cursor:pointer;
 }
 
 /* ABOUT */
 .about{
-    background:white;
-    margin-top:30px;
-    padding:40px 20px;
-    text-align:center;
+background:white;
+margin-top:30px;
+padding:40px 20px;
+text-align:center;
 }
 
 .about h2{
-    color:#4b2e1f;
+color:#4b2e1f;
 }
 
 .about p{
-    max-width:700px;
-    margin:auto;
-    line-height:1.7;
+max-width:700px;
+margin:auto;
+line-height:1.7;
 }
 
 /* REVIEWS */
 .reviews{
-    padding:30px 20px;
-    text-align:center;
+padding:30px 20px;
+text-align:center;
 }
 
 .review{
-    background:white;
-    max-width:500px;
-    margin:15px auto;
-    padding:20px;
-    border-radius:10px;
-    box-shadow:0 3px 10px rgba(0,0,0,.1);
+background:white;
+max-width:500px;
+margin:15px auto;
+padding:20px;
+border-radius:10px;
+box-shadow:0 3px 10px rgba(0,0,0,.1);
 }
 
 /* ORDER */
 #orderSection{
-    display:none;
-    max-width:500px;
-    margin:40px auto;
-    background:white;
-    padding:25px;
-    border-radius:12px;
-    box-shadow:0 4px 15px rgba(0,0,0,.15);
+display:none;
+max-width:500px;
+margin:40px auto;
+background:white;
+padding:25px;
+border-radius:12px;
+box-shadow:0 4px 15px rgba(0,0,0,.15);
 }
 
 #orderSection h2{
-    text-align:center;
-    color:#4b2e1f;
+text-align:center;
+color:#4b2e1f;
 }
 
 input,textarea{
-    width:100%;
-    padding:12px;
-    margin:8px 0 15px;
-    border:1px solid #ccc;
-    border-radius:6px;
-    font-size:16px;
+width:100%;
+padding:12px;
+margin:8px 0 15px;
+border:1px solid #ccc;
+border-radius:6px;
+font-size:16px;
 }
 
 textarea{
-    height:100px;
+height:100px;
 }
 
 .whatsapp-btn{
-    width:100%;
-    background:green;
-    color:white;
-    border:none;
-    padding:13px;
-    border-radius:7px;
-    font-size:17px;
+width:100%;
+background:green;
+color:white;
+border:none;
+padding:13px;
+border-radius:7px;
+font-size:17px;
 }
 
 /* CONTACT */
 .contact{
-    background:#eee;
-    text-align:center;
-    padding:35px 20px;
+background:#eee;
+text-align:center;
+padding:35px 20px;
 }
 
 .contact h2{
-    color:#4b2e1f;
+color:#4b2e1f;
 }
 
 .contact a{
-    color:#4b2e1f;
-    font-weight:bold;
-    text-decoration:none;
+color:#4b2e1f;
+font-weight:bold;
+text-decoration:none;
 }
 
 .map-btn{
-    display:inline-block;
-    background:#d2691e;
-    color:white !important;
-    padding:12px 25px;
-    border-radius:7px;
-    margin-top:10px;
+display:inline-block;
+background:#d2691e;
+color:white !important;
+padding:12px 25px;
+border-radius:7px;
+margin-top:10px;
 }
 
 /* FOOTER */
 footer{
-    background:#2d1b12;
-    color:white;
-    text-align:center;
-    padding:20px;
+background:#2d1b12;
+color:white;
+text-align:center;
+padding:20px;
 }
 
 /* MOBILE */
 @media(max-width:600px){
 
 header h1{
-    font-size:28px;
+font-size:28px;
 }
 
 nav a{
-    margin:0 5px;
-    font-size:14px;
+margin:0 5px;
+font-size:14px;
 }
 
 .home-box h2{
-    font-size:28px;
+font-size:28px;
 }
 
 .card{
-    width:100%;
-    max-width:330px;
+width:100%;
+max-width:330px;
 }
 
 }
+/* CART */
+.cart-btn{
+background:#d2691e;
+color:white;
+border:none;
+padding:10px 18px;
+border-radius:7px;
+cursor:pointer;
+font-size:16px;
+font-weight:bold;
+}
+
+#cartSection{
+display:none;
+max-width:600px;
+margin:30px auto;
+background:white;
+padding:25px;
+border-radius:12px;
+box-shadow:0 4px 15px rgba(0,0,0,.15);
+}
+
+#cartSection h2{
+text-align:center;
+color:#4b2e1f;
+}
+
+.cart-item{
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:10px;
+padding:15px 0;
+border-bottom:1px solid #ddd;
+}
+
+.cart-item-info{
+flex:1;
+}
+
+.cart-item-info b{
+color:#4b2e1f;
+}
+
+.quantity{
+display:flex;
+align-items:center;
+gap:8px;
+}
+
+.quantity button{
+border:none;
+background:#4b2e1f;
+color:white;
+width:30px;
+height:30px;
+border-radius:5px;
+cursor:pointer;
+font-size:18px;
+}
+
+.remove-btn{
+border:none;
+background:#d9534f;
+color:white;
+padding:7px 10px;
+border-radius:5px;
+cursor:pointer;
+}
+
+.cart-total{
+text-align:right;
+font-size:21px;
+font-weight:bold;
+color:#b45f06;
+margin-top:20px;
+}
+
+.cart-whatsapp{
+width:100%;
+background:green;
+color:white;
+border:none;
+padding:13px;
+border-radius:7px;
+font-size:17px;
+cursor:pointer;
+margin-top:15px;
+}
+
 </style>
 </head>
 
@@ -371,6 +465,10 @@ nav a{
 <a href="#about">About</a>
 <a href="#reviews">Reviews</a>
 <a href="#contact">Contact</a>
+<button class="cart-btn" onclick="openCart()">
+🛒 Cart (<span id="cartCount">0</span>)
+</button>
+
 </nav>
 
 
@@ -409,6 +507,11 @@ Our Furniture Collection
 <p class="price">₹25,000</p>
 <p class="available">✅ Available</p>
 <button class="buy-btn" onclick="openOrder('Sofa'); event.stopPropagation();">
+<button class="buy-btn"
+onclick="addToCart('Sofa',25000); event.stopPropagation();">
+🛒 Add to Cart
+</button>
+
 Buy Now
 </button>
 </div>
@@ -421,6 +524,11 @@ Buy Now
 <p class="price">₹35,000</p>
 <p class="available">✅ Available</p>
 <button class="buy-btn" onclick="openOrder('Double Bed'); event.stopPropagation();">
+<button class="buy-btn"
+onclick="addToCart('Sofa',25000); event.stopPropagation();">
+🛒 Add to Cart
+</button>
+
 Buy Now
 </button>
 </div>
@@ -433,6 +541,11 @@ Buy Now
 <p class="price">₹18,000</p>
 <p class="available">✅ Available</p>
 <button class="buy-btn" onclick="openOrder('Dining Table'); event.stopPropagation();">
+<button class="buy-btn"
+onclick="addToCart('Sofa',25000); event.stopPropagation();">
+🛒 Add to Cart
+</button>
+
 Buy Now
 </button>
 </div>
@@ -445,6 +558,11 @@ Buy Now
 <p class="price">₹4,500</p>
 <p class="available">✅ Available</p>
 <button class="buy-btn" onclick="openOrder('Chair'); event.stopPropagation();">
+<button class="buy-btn"
+onclick="addToCart('Sofa',25000); event.stopPropagation();">
+🛒 Add to Cart
+</button>
+
 Buy Now
 </button>
 </div>
@@ -457,6 +575,11 @@ Buy Now
 <p class="price">₹22,000</p>
 <p class="available">✅ Available</p>
 <button class="buy-btn" onclick="openOrder('Almirah'); event.stopPropagation();">
+<button class="buy-btn"
+onclick="addToCart('Sofa',25000); event.stopPropagation();">
+🛒 Add to Cart
+</button>
+
 Buy Now
 </button>
 </div>
@@ -469,6 +592,11 @@ Buy Now
 <p class="price">₹8,000</p>
 <p class="available">✅ Available</p>
 <button class="buy-btn" onclick="openOrder('Center Table'); event.stopPropagation();">
+<button class="buy-btn"
+onclick="addToCart('Sofa',25000); event.stopPropagation();">
+🛒 Add to Cart
+</button>
+
 Buy Now
 </button>
 </div>
@@ -481,6 +609,11 @@ Buy Now
 <p class="price">₹15,000</p>
 <p class="available">✅ Available</p>
 <button class="buy-btn" onclick="openOrder('Wooden Door'); event.stopPropagation();">
+<button class="buy-btn"
+onclick="addToCart('Sofa',25000); event.stopPropagation();">
+🛒 Add to Cart
+</button>
+
 Buy Now
 </button>
 </div>
@@ -493,6 +626,11 @@ Buy Now
 <p class="price">₹7,500</p>
 <p class="available">✅ Available</p>
 <button class="buy-btn" onclick="openOrder('Office Chair'); event.stopPropagation();">
+<button class="buy-btn"
+onclick="addToCart('Sofa',25000); event.stopPropagation();">
+🛒 Add to Cart
+</button>
+
 Buy Now
 </button>
 </div>
@@ -505,6 +643,11 @@ Buy Now
 <p class="price">₹28,000</p>
 <p class="available">✅ Available</p>
 <button class="buy-btn" onclick="openOrder('Wardrobe'); event.stopPropagation();">
+<button class="buy-btn"
+onclick="addToCart('Sofa',25000); event.stopPropagation();">
+🛒 Add to Cart
+</button>
+
 Buy Now
 </button>
 </div>
@@ -517,6 +660,11 @@ Buy Now
 <p class="price">₹10,000</p>
 <p class="available">✅ Available</p>
 <button class="buy-btn" onclick="openOrder('Bookshelf'); event.stopPropagation();">
+<button class="buy-btn"
+onclick="addToCart('Sofa',25000); event.stopPropagation();">
+🛒 Add to Cart
+</button>
+
 Buy Now
 </button>
 </div>
@@ -541,6 +689,9 @@ Buy Now
 <p class="modal-price" id="modalPrice"></p>
 
 <p class="modal-available">✅ Available</p>
+<button class="modal-buy" onclick="addCurrentProductToCart()" style="margin-bottom:10px;">
+🛒 Add to Cart
+</button>
 
 <button class="modal-buy" onclick="buyFromModal()">
 Buy Now 🛒
@@ -549,6 +700,23 @@ Buy Now 🛒
 </div>
 
 </div>
+<!-- CART -->
+
+<section id="cartSection">
+
+<h2>🛒 Your Shopping Cart</h2>
+
+<div id="cartItems"></div>
+
+<div class="cart-total">
+Total: ₹<span id="cartTotal">0</span>
+</div>
+
+<button class="cart-whatsapp" onclick="sendCartToWhatsApp()">
+📱 Order Cart on WhatsApp
+</button>
+
+</section>
 
 
 <!-- ABOUT -->
@@ -772,12 +940,236 @@ window.onclick=function(event){
 let modal=document.getElementById("productModal");
 
 if(event.target==modal){
-    closeProduct();
+closeProduct();
 }
+
+}
+/* SHOPPING CART */
+
+let cart = [];
+
+
+/* ADD PRODUCT TO CART */
+
+function addToCart(name, price){
+
+let existingProduct = cart.find(item => item.name === name);
+
+if(existingProduct){
+
+existingProduct.quantity++;
+
+}else{
+
+cart.push({
+name:name,
+price:price,
+quantity:1
+});
+
+}
+
+updateCart();
+
+alert(name + " cart में add हो गया! 🛒");
+}
+
+
+/* ADD CURRENT PRODUCT FROM POPUP */
+
+function addCurrentProductToCart(){
+
+let priceText = document.getElementById("modalPrice").innerText;
+
+let price = parseInt(
+priceText.replace("₹","").replace(/,/g,"")
+);
+
+addToCart(modalProduct,price);
+}
+
+
+/* UPDATE CART */
+
+function updateCart(){
+
+let cartItems = document.getElementById("cartItems");
+
+let cartCount = document.getElementById("cartCount");
+
+let cartTotal = document.getElementById("cartTotal");
+
+cartItems.innerHTML = "";
+
+let totalItems = 0;
+
+let totalPrice = 0;
+
+
+cart.forEach(function(item,index){
+
+totalItems += item.quantity;
+
+totalPrice += item.price * item.quantity;
+
+
+cartItems.innerHTML += `
+
+<div class="cart-item">
+
+<div class="cart-item-info">
+
+<b>$`{item.name}</b>
+
+<br>
+
+₹`${item.price.toLocaleString("en-IN")}
+
+</div>
+
+
+<div class="quantity">
+
+<button onclick="changeQuantity($`{index},-1)">
+−
+</button>
+
+<span>`${item.quantity}</span>
+
+<button onclick="changeQuantity($`{index},1)">
++
+</button>
+
+</div>
+
+
+<button class="remove-btn"
+onclick="removeFromCart(`${index})">
+
+🗑️
+
+</button>
+
+</div>
+
+`;
+
+});
+
+
+cartCount.innerText = totalItems;
+
+cartTotal.innerText = totalPrice.toLocaleString("en-IN");
+
+}
+
+
+/* CHANGE QUANTITY */
+
+function changeQuantity(index,change){
+
+cart[index].quantity += change;
+
+
+if(cart[index].quantity <= 0){
+
+cart.splice(index,1);
+
+}
+
+
+updateCart();
+
+}
+
+
+/* REMOVE PRODUCT */
+
+function removeFromCart(index){
+
+cart.splice(index,1);
+
+updateCart();
+
+}
+
+
+/* OPEN CART */
+
+function openCart(){
+
+document.getElementById("cartSection").style.display="block";
+
+document.getElementById("cartSection").scrollIntoView({
+behavior:"smooth"
+});
+
+updateCart();
+
+}
+
+
+/* SEND CART TO WHATSAPP */
+
+function sendCartToWhatsApp(){
+
+if(cart.length === 0){
+
+alert("आपका Cart खाली है। पहले कोई Product Add करें।");
+
+return;
+
+}
+
+
+let message =
+"🛋️ ANSHIV FURNITURE ORDER\n\n";
+
+
+let total = 0;
+
+
+cart.forEach(function(item){
+
+let itemTotal = item.price * item.quantity;
+
+total += itemTotal;
+
+
+message +=
+"Product: " + item.name + "\n" +
+"Quantity: " + item.quantity + "\n" +
+"Price: ₹" +
+item.price.toLocaleString("en-IN") + "\n" +
+"Subtotal: ₹" +
+itemTotal.toLocaleString("en-IN") +
+"\n\n";
+
+});
+
+
+message +=
+"TOTAL: ₹" +
+total.toLocaleString("en-IN") +
+"\n\n" +
+"Please confirm my order.";
+
+
+let whatsappNumber = "918579914270";
+
+
+let url =
+"https://wa.me/" +
+whatsappNumber +
+"?text=" +
+encodeURIComponent(message);
+
+
+window.open(url,"_blank");
 
 }
 
 </script>
 
 </body>
-    </html>
+</html>
