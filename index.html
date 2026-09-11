@@ -1,7 +1,3 @@
-
-
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,443 +5,442 @@
 
 <style>
 *{
-box-sizing:border-box;
-scroll-behavior:smooth;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
 }
 
 body{
-margin:0;
-font-family:Arial,sans-serif;
-background:#f5f5f5;
-color:#333;
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#f5f5f5;
+    color:#333;
 }
 
 /* HEADER */
 header{
-background:#4b2e1f;
-color:white;
-text-align:center;
-padding:28px 10px;
+    background:#4b2e1f;
+    color:white;
+    text-align:center;
+    padding:28px 10px;
 }
 
 header h1{
-margin:0;
-font-size:34px;
+    margin:0;
+    font-size:34px;
 }
 
 header p{
-margin:8px 0 0;
+    margin:8px 0 0;
 }
 
 /* NAVIGATION */
 nav{
-background:#2d1b12;
-text-align:center;
-padding:15px;
-position:sticky;
-top:0;
-z-index:10;
+    background:#2d1b12;
+    text-align:center;
+    padding:15px;
+    position:sticky;
+    top:0;
+    z-index:10;
 }
 
 nav a{
-color:white;
-text-decoration:none;
-margin:0 10px;
-font-weight:bold;
+    color:white;
+    text-decoration:none;
+    margin:0 10px;
+    font-weight:bold;
+}
+
+.cart-btn{
+    background:#d2691e;
+    color:white;
+    border:none;
+    padding:10px 18px;
+    border-radius:7px;
+    cursor:pointer;
+    font-size:16px;
+    font-weight:bold;
 }
 
 /* HOME */
 .home{
-min-height:350px;
-background:url("https://images.unsplash.com/photo-1600210492486-724fe5c67fb0")
-center/cover;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
-padding:30px;
+    min-height:350px;
+    background:url("https://images.unsplash.com/photo-1600210492486-724fe5c67fb0")
+    center/cover;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:30px;
 }
 
 .home-box{
-background:rgba(0,0,0,.65);
-color:white;
-padding:30px;
-border-radius:15px;
+    background:rgba(0,0,0,.65);
+    color:white;
+    padding:30px;
+    border-radius:15px;
 }
 
 .home-box h2{
-font-size:36px;
-margin:5px;
+    font-size:36px;
+    margin:5px;
 }
 
 .home-box p{
-font-size:18px;
+    font-size:18px;
 }
 
 .shop-btn{
-display:inline-block;
-background:#d2691e;
-color:white;
-padding:12px 25px;
-border-radius:7px;
-text-decoration:none;
-margin-top:10px;
+    display:inline-block;
+    background:#d2691e;
+    color:white;
+    padding:12px 25px;
+    border-radius:7px;
+    text-decoration:none;
+    margin-top:10px;
 }
 
 /* PRODUCTS */
 .title{
-text-align:center;
-color:#4b2e1f;
-margin-top:40px;
+    text-align:center;
+    color:#4b2e1f;
+    margin-top:40px;
 }
 
 .products{
-display:flex;
-justify-content:center;
-gap:20px;
-flex-wrap:wrap;
-padding:20px;
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+    padding:20px;
 }
 
 .card{
-background:white;
-width:280px;
-padding:15px;
-border-radius:12px;
-box-shadow:0 4px 12px rgba(0,0,0,.15);
-text-align:center;
-cursor:pointer;
-transition:.3s;
+    background:white;
+    width:280px;
+    padding:15px;
+    border-radius:12px;
+    box-shadow:0 4px 12px rgba(0,0,0,.15);
+    text-align:center;
+    cursor:pointer;
+    transition:.3s;
 }
 
 .card:hover{
-transform:translateY(-5px);
-box-shadow:0 7px 18px rgba(0,0,0,.25);
+    transform:translateY(-5px);
 }
 
 .card img{
-width:100%;
-height:200px;
-object-fit:cover;
-border-radius:10px;
+    width:100%;
+    height:200px;
+    object-fit:cover;
+    border-radius:10px;
 }
 
 .card h3{
-color:#4b2e1f;
-font-size:22px;
+    color:#4b2e1f;
+    font-size:22px;
 }
 
 .price{
-color:#b45f06;
-font-size:19px;
-font-weight:bold;
+    color:#b45f06;
+    font-size:19px;
+    font-weight:bold;
 }
 
 .available{
-color:green;
-font-weight:bold;
-margin:8px 0;
+    color:green;
+    font-weight:bold;
 }
 
 .buy-btn{
-background:#d2691e;
-color:white;
-border:none;
-padding:11px 24px;
-border-radius:7px;
-cursor:pointer;
-font-size:16px;
+    background:#d2691e;
+    color:white;
+    border:none;
+    padding:11px 18px;
+    border-radius:7px;
+    cursor:pointer;
+    font-size:15px;
+    margin:4px;
 }
 
-/* PRODUCT DETAILS POPUP */
+/* PRODUCT POPUP */
 #productModal{
-display:none;
-position:fixed;
-z-index:100;
-left:0;
-top:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,.75);
-padding:20px;
-overflow:auto;
+    display:none;
+    position:fixed;
+    z-index:100;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,.75);
+    padding:20px;
+    overflow:auto;
 }
 
 .modal-box{
-background:white;
-max-width:500px;
-margin:40px auto;
-padding:20px;
-border-radius:15px;
-text-align:center;
-position:relative;
+    background:white;
+    max-width:500px;
+    margin:40px auto;
+    padding:20px;
+    border-radius:15px;
+    text-align:center;
+    position:relative;
 }
 
 .modal-box img{
-width:100%;
-max-height:300px;
-object-fit:cover;
-border-radius:12px;
+    width:100%;
+    max-height:300px;
+    object-fit:cover;
+    border-radius:12px;
 }
 
 .modal-box h2{
-color:#4b2e1f;
-margin-bottom:10px;
+    color:#4b2e1f;
 }
 
 .modal-price{
-color:#b45f06;
-font-size:23px;
-font-weight:bold;
+    color:#b45f06;
+    font-size:23px;
+    font-weight:bold;
 }
 
 .modal-available{
-color:green;
-font-size:18px;
-font-weight:bold;
-margin:12px;
+    color:green;
+    font-size:18px;
+    font-weight:bold;
 }
 
 .close-btn{
-position:absolute;
-right:15px;
-top:10px;
-font-size:30px;
-cursor:pointer;
-color:#555;
+    position:absolute;
+    right:15px;
+    top:10px;
+    font-size:30px;
+    cursor:pointer;
 }
 
 .modal-buy{
-background:#d2691e;
-color:white;
-border:none;
-padding:13px 30px;
-border-radius:7px;
-font-size:17px;
-cursor:pointer;
+    background:#d2691e;
+    color:white;
+    border:none;
+    padding:13px 25px;
+    border-radius:7px;
+    font-size:16px;
+    cursor:pointer;
+    margin:5px;
+}
+
+/* CART */
+#cartSection{
+    display:none;
+    max-width:600px;
+    margin:30px auto;
+    background:white;
+    padding:25px;
+    border-radius:12px;
+    box-shadow:0 4px 15px rgba(0,0,0,.15);
+}
+
+#cartSection h2{
+    text-align:center;
+    color:#4b2e1f;
+}
+
+.cart-item{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:10px;
+    padding:15px 0;
+    border-bottom:1px solid #ddd;
+}
+
+.cart-item-info{
+    flex:1;
+}
+
+.cart-item-info b{
+    color:#4b2e1f;
+}
+
+.quantity{
+    display:flex;
+    align-items:center;
+    gap:8px;
+}
+
+.quantity button{
+    border:none;
+    background:#4b2e1f;
+    color:white;
+    width:30px;
+    height:30px;
+    border-radius:5px;
+    cursor:pointer;
+    font-size:18px;
+}
+
+.remove-btn{
+    border:none;
+    background:#d9534f;
+    color:white;
+    padding:7px 10px;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+.cart-total{
+    text-align:right;
+    font-size:21px;
+    font-weight:bold;
+    color:#b45f06;
+    margin-top:20px;
+}
+
+.cart-whatsapp{
+    width:100%;
+    background:green;
+    color:white;
+    border:none;
+    padding:13px;
+    border-radius:7px;
+    font-size:17px;
+    cursor:pointer;
+    margin-top:15px;
 }
 
 /* ABOUT */
 .about{
-background:white;
-margin-top:30px;
-padding:40px 20px;
-text-align:center;
+    background:white;
+    margin-top:30px;
+    padding:40px 20px;
+    text-align:center;
 }
 
 .about h2{
-color:#4b2e1f;
+    color:#4b2e1f;
 }
 
 .about p{
-max-width:700px;
-margin:auto;
-line-height:1.7;
+    max-width:700px;
+    margin:auto;
+    line-height:1.7;
 }
 
 /* REVIEWS */
 .reviews{
-padding:30px 20px;
-text-align:center;
+    padding:30px 20px;
+    text-align:center;
 }
 
 .review{
-background:white;
-max-width:500px;
-margin:15px auto;
-padding:20px;
-border-radius:10px;
-box-shadow:0 3px 10px rgba(0,0,0,.1);
+    background:white;
+    max-width:500px;
+    margin:15px auto;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 3px 10px rgba(0,0,0,.1);
 }
 
 /* ORDER */
 #orderSection{
-display:none;
-max-width:500px;
-margin:40px auto;
-background:white;
-padding:25px;
-border-radius:12px;
-box-shadow:0 4px 15px rgba(0,0,0,.15);
+    display:none;
+    max-width:500px;
+    margin:40px auto;
+    background:white;
+    padding:25px;
+    border-radius:12px;
+    box-shadow:0 4px 15px rgba(0,0,0,.15);
 }
 
 #orderSection h2{
-text-align:center;
-color:#4b2e1f;
+    text-align:center;
+    color:#4b2e1f;
 }
 
 input,textarea{
-width:100%;
-padding:12px;
-margin:8px 0 15px;
-border:1px solid #ccc;
-border-radius:6px;
-font-size:16px;
+    width:100%;
+    padding:12px;
+    margin:8px 0 15px;
+    border:1px solid #ccc;
+    border-radius:6px;
+    font-size:16px;
 }
 
 textarea{
-height:100px;
+    height:100px;
 }
 
 .whatsapp-btn{
-width:100%;
-background:green;
-color:white;
-border:none;
-padding:13px;
-border-radius:7px;
-font-size:17px;
+    width:100%;
+    background:green;
+    color:white;
+    border:none;
+    padding:13px;
+    border-radius:7px;
+    font-size:17px;
 }
 
 /* CONTACT */
 .contact{
-background:#eee;
-text-align:center;
-padding:35px 20px;
+    background:#eee;
+    text-align:center;
+    padding:35px 20px;
 }
 
 .contact h2{
-color:#4b2e1f;
+    color:#4b2e1f;
 }
 
 .contact a{
-color:#4b2e1f;
-font-weight:bold;
-text-decoration:none;
+    color:#4b2e1f;
+    font-weight:bold;
+    text-decoration:none;
 }
 
 .map-btn{
-display:inline-block;
-background:#d2691e;
-color:white !important;
-padding:12px 25px;
-border-radius:7px;
-margin-top:10px;
+    display:inline-block;
+    background:#d2691e;
+    color:white !important;
+    padding:12px 25px;
+    border-radius:7px;
+    margin-top:10px;
 }
 
 /* FOOTER */
 footer{
-background:#2d1b12;
-color:white;
-text-align:center;
-padding:20px;
+    background:#2d1b12;
+    color:white;
+    text-align:center;
+    padding:20px;
 }
 
 /* MOBILE */
 @media(max-width:600px){
 
-header h1{
-font-size:28px;
-}
+    header h1{
+        font-size:28px;
+    }
 
-nav a{
-margin:0 5px;
-font-size:14px;
-}
+    nav a{
+        margin:0 5px;
+        font-size:14px;
+    }
 
-.home-box h2{
-font-size:28px;
-}
+    .home-box h2{
+        font-size:28px;
+    }
 
-.card{
-width:100%;
-max-width:330px;
-}
+    .card{
+        width:100%;
+        max-width:330px;
+    }
 
+    .cart-item{
+        flex-wrap:wrap;
+    }
 }
-/* CART */
-.cart-btn{
-background:#d2691e;
-color:white;
-border:none;
-padding:10px 18px;
-border-radius:7px;
-cursor:pointer;
-font-size:16px;
-font-weight:bold;
-}
-
-#cartSection{
-display:none;
-max-width:600px;
-margin:30px auto;
-background:white;
-padding:25px;
-border-radius:12px;
-box-shadow:0 4px 15px rgba(0,0,0,.15);
-}
-
-#cartSection h2{
-text-align:center;
-color:#4b2e1f;
-}
-
-.cart-item{
-display:flex;
-align-items:center;
-justify-content:space-between;
-gap:10px;
-padding:15px 0;
-border-bottom:1px solid #ddd;
-}
-
-.cart-item-info{
-flex:1;
-}
-
-.cart-item-info b{
-color:#4b2e1f;
-}
-
-.quantity{
-display:flex;
-align-items:center;
-gap:8px;
-}
-
-.quantity button{
-border:none;
-background:#4b2e1f;
-color:white;
-width:30px;
-height:30px;
-border-radius:5px;
-cursor:pointer;
-font-size:18px;
-}
-
-.remove-btn{
-border:none;
-background:#d9534f;
-color:white;
-padding:7px 10px;
-border-radius:5px;
-cursor:pointer;
-}
-
-.cart-total{
-text-align:right;
-font-size:21px;
-font-weight:bold;
-color:#b45f06;
-margin-top:20px;
-}
-
-.cart-whatsapp{
-width:100%;
-background:green;
-color:white;
-border:none;
-padding:13px;
-border-radius:7px;
-font-size:17px;
-cursor:pointer;
-margin-top:15px;
-}
-
 </style>
 </head>
-
 
 <body>
 
@@ -456,7 +451,6 @@ margin-top:15px;
 <p>Beautiful Furniture For Your Beautiful Home</p>
 </header>
 
-
 <!-- NAVIGATION -->
 
 <nav>
@@ -465,12 +459,11 @@ margin-top:15px;
 <a href="#about">About</a>
 <a href="#reviews">Reviews</a>
 <a href="#contact">Contact</a>
+
 <button class="cart-btn" onclick="openCart()">
 🛒 Cart (<span id="cartCount">0</span>)
 </button>
-
 </nav>
-
 
 <!-- HOME -->
 
@@ -490,183 +483,291 @@ Shop Now
 
 </section>
 
-
 <!-- PRODUCTS -->
 
 <h2 class="title" id="products">
 Our Furniture Collection
 </h2>
 
-
 <section class="products">
 
-<div class="card" onclick="showProduct('Sofa','Comfortable modern sofa.','₹25,000','https://images.unsplash.com/photo-1555041469-a586c61ea9bc')">
+<!-- SOFA -->
+
+<div class="card"
+onclick="showProduct('Sofa','Comfortable modern sofa.','₹25,000','https://images.unsplash.com/photo-1555041469-a586c61ea9bc',25000)">
+
 <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc">
+
 <h3>Sofa</h3>
+
 <p>Comfortable modern sofa.</p>
+
 <p class="price">₹25,000</p>
+
 <p class="available">✅ Available</p>
-<button class="buy-btn" onclick="openOrder('Sofa'); event.stopPropagation();">
+
 <button class="buy-btn"
-onclick="addToCart('Sofa',25000); event.stopPropagation();">
+onclick="addToCart('Sofa',25000);event.stopPropagation();">
 🛒 Add to Cart
 </button>
 
+<button class="buy-btn"
+onclick="openOrder('Sofa');event.stopPropagation();">
 Buy Now
 </button>
+
 </div>
 
 
-<div class="card" onclick="showProduct('Double Bed','Strong wooden double bed.','₹35,000','https://images.unsplash.com/photo-1505693416388-ac5ce068fe85')">
+<!-- DOUBLE BED -->
+
+<div class="card"
+onclick="showProduct('Double Bed','Strong wooden double bed.','₹35,000','https://images.unsplash.com/photo-1505693416388-ac5ce068fe85',35000)">
+
 <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85">
+
 <h3>Double Bed</h3>
+
 <p>Strong wooden double bed.</p>
+
 <p class="price">₹35,000</p>
+
 <p class="available">✅ Available</p>
-<button class="buy-btn" onclick="openOrder('Double Bed'); event.stopPropagation();">
+
 <button class="buy-btn"
-onclick="addToCart('Sofa',25000); event.stopPropagation();">
+onclick="addToCart('Double Bed',35000);event.stopPropagation();">
 🛒 Add to Cart
 </button>
 
+<button class="buy-btn"
+onclick="openOrder('Double Bed');event.stopPropagation();">
 Buy Now
 </button>
+
 </div>
 
 
-<div class="card" onclick="showProduct('Dining Table','Beautiful dining table.','₹18,000','https://images.unsplash.com/photo-1533090481720-856c6e3c1fdc')">
+<!-- DINING TABLE -->
+
+<div class="card"
+onclick="showProduct('Dining Table','Beautiful dining table.','₹18,000','https://images.unsplash.com/photo-1533090481720-856c6e3c1fdc',18000)">
+
 <img src="https://images.unsplash.com/photo-1533090481720-856c6e3c1fdc">
+
 <h3>Dining Table</h3>
+
 <p>Beautiful dining table.</p>
+
 <p class="price">₹18,000</p>
+
 <p class="available">✅ Available</p>
-<button class="buy-btn" onclick="openOrder('Dining Table'); event.stopPropagation();">
+
 <button class="buy-btn"
-onclick="addToCart('Sofa',25000); event.stopPropagation();">
+onclick="addToCart('Dining Table',18000);event.stopPropagation();">
 🛒 Add to Cart
 </button>
 
+<button class="buy-btn"
+onclick="openOrder('Dining Table');event.stopPropagation();">
 Buy Now
 </button>
+
 </div>
 
 
-<div class="card" onclick="showProduct('Chair','Comfortable wooden chair.','₹4,500','https://images.unsplash.com/photo-1551298370-9d3d53740c72')">
+<!-- CHAIR -->
+
+<div class="card"
+onclick="showProduct('Chair','Comfortable wooden chair.','₹4,500','https://images.unsplash.com/photo-1551298370-9d3d53740c72',4500)">
+
 <img src="https://images.unsplash.com/photo-1551298370-9d3d53740c72">
+
 <h3>Chair</h3>
+
 <p>Comfortable wooden chair.</p>
+
 <p class="price">₹4,500</p>
+
 <p class="available">✅ Available</p>
-<button class="buy-btn" onclick="openOrder('Chair'); event.stopPropagation();">
+
 <button class="buy-btn"
-onclick="addToCart('Sofa',25000); event.stopPropagation();">
+onclick="addToCart('Chair',4500);event.stopPropagation();">
 🛒 Add to Cart
 </button>
 
+<button class="buy-btn"
+onclick="openOrder('Chair');event.stopPropagation();">
 Buy Now
 </button>
+
 </div>
 
 
-<div class="card" onclick="showProduct('Almirah','Spacious modern almirah.','₹22,000','https://images.unsplash.com/photo-1558997519-83ea9252edf8')">
+<!-- ALMIRAH -->
+
+<div class="card"
+onclick="showProduct('Almirah','Spacious modern almirah.','₹22,000','https://images.unsplash.com/photo-1558997519-83ea9252edf8',22000)">
+
 <img src="https://images.unsplash.com/photo-1558997519-83ea9252edf8">
+
 <h3>Almirah</h3>
+
 <p>Spacious modern almirah.</p>
+
 <p class="price">₹22,000</p>
+
 <p class="available">✅ Available</p>
-<button class="buy-btn" onclick="openOrder('Almirah'); event.stopPropagation();">
+
 <button class="buy-btn"
-onclick="addToCart('Sofa',25000); event.stopPropagation();">
+onclick="addToCart('Almirah',22000);event.stopPropagation();">
 🛒 Add to Cart
 </button>
 
+<button class="buy-btn"
+onclick="openOrder('Almirah');event.stopPropagation();">
 Buy Now
 </button>
+
 </div>
 
 
-<div class="card" onclick="showProduct('Center Table','Stylish living room table.','₹8,000','https://images.unsplash.com/photo-1618220179428-22790b461013')">
+<!-- CENTER TABLE -->
+
+<div class="card"
+onclick="showProduct('Center Table','Stylish living room table.','₹8,000','https://images.unsplash.com/photo-1618220179428-22790b461013',8000)">
+
 <img src="https://images.unsplash.com/photo-1618220179428-22790b461013">
+
 <h3>Center Table</h3>
+
 <p>Stylish living room table.</p>
+
 <p class="price">₹8,000</p>
+
 <p class="available">✅ Available</p>
-<button class="buy-btn" onclick="openOrder('Center Table'); event.stopPropagation();">
+
 <button class="buy-btn"
-onclick="addToCart('Sofa',25000); event.stopPropagation();">
+onclick="addToCart('Center Table',8000);event.stopPropagation();">
 🛒 Add to Cart
 </button>
 
+<button class="buy-btn"
+onclick="openOrder('Center Table');event.stopPropagation();">
 Buy Now
 </button>
+
 </div>
 
 
-<div class="card" onclick="showProduct('Wooden Door','Premium wooden door.','₹15,000','https://images.unsplash.com/photo-1600210492486-724fe5c67fb0')">
+<!-- WOODEN DOOR -->
+
+<div class="card"
+onclick="showProduct('Wooden Door','Premium wooden door.','₹15,000','https://images.unsplash.com/photo-1600210492486-724fe5c67fb0',15000)">
+
 <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0">
+
 <h3>Wooden Door</h3>
+
 <p>Premium wooden door.</p>
+
 <p class="price">₹15,000</p>
+
 <p class="available">✅ Available</p>
-<button class="buy-btn" onclick="openOrder('Wooden Door'); event.stopPropagation();">
+
 <button class="buy-btn"
-onclick="addToCart('Sofa',25000); event.stopPropagation();">
+onclick="addToCart('Wooden Door',15000);event.stopPropagation();">
 🛒 Add to Cart
 </button>
 
+<button class="buy-btn"
+onclick="openOrder('Wooden Door');event.stopPropagation();">
 Buy Now
 </button>
+
 </div>
 
 
-<div class="card" onclick="showProduct('Office Chair','Comfortable office chair.','₹7,500','https://images.unsplash.com/photo-1598300042247-d088f8ab3a91')">
+<!-- OFFICE CHAIR -->
+
+<div class="card"
+onclick="showProduct('Office Chair','Comfortable office chair.','₹7,500','https://images.unsplash.com/photo-1598300042247-d088f8ab3a91',7500)">
+
 <img src="https://images.unsplash.com/photo-1598300042247-d088f8ab3a91">
+
 <h3>Office Chair</h3>
+
 <p>Comfortable office chair.</p>
+
 <p class="price">₹7,500</p>
+
 <p class="available">✅ Available</p>
-<button class="buy-btn" onclick="openOrder('Office Chair'); event.stopPropagation();">
+
 <button class="buy-btn"
-onclick="addToCart('Sofa',25000); event.stopPropagation();">
+onclick="addToCart('Office Chair',7500);event.stopPropagation();">
 🛒 Add to Cart
 </button>
 
+<button class="buy-btn"
+onclick="openOrder('Office Chair');event.stopPropagation();">
 Buy Now
 </button>
+
 </div>
 
 
-<div class="card" onclick="showProduct('Wardrobe','Modern bedroom wardrobe.','₹28,000','https://images.unsplash.com/photo-1550226891-ef816aed4a98')">
+<!-- WARDROBE -->
+
+<div class="card"
+onclick="showProduct('Wardrobe','Modern bedroom wardrobe.','₹28,000','https://images.unsplash.com/photo-1550226891-ef816aed4a98',28000)">
+
 <img src="https://images.unsplash.com/photo-1550226891-ef816aed4a98">
+
 <h3>Wardrobe</h3>
+
 <p>Modern bedroom wardrobe.</p>
+
 <p class="price">₹28,000</p>
+
 <p class="available">✅ Available</p>
-<button class="buy-btn" onclick="openOrder('Wardrobe'); event.stopPropagation();">
+
 <button class="buy-btn"
-onclick="addToCart('Sofa',25000); event.stopPropagation();">
+onclick="addToCart('Wardrobe',28000);event.stopPropagation();">
 🛒 Add to Cart
 </button>
 
+<button class="buy-btn"
+onclick="openOrder('Wardrobe');event.stopPropagation();">
 Buy Now
 </button>
+
 </div>
 
 
-<div class="card" onclick="showProduct('Bookshelf','Beautiful wooden bookshelf.','₹10,000','https://images.unsplash.com/photo-1592078615290-033ee584e267')">
+<!-- BOOKSHELF -->
+
+<div class="card"
+onclick="showProduct('Bookshelf','Beautiful wooden bookshelf.','₹10,000','https://images.unsplash.com/photo-1592078615290-033ee584e267',10000)">
+
 <img src="https://images.unsplash.com/photo-1592078615290-033ee584e267">
+
 <h3>Bookshelf</h3>
+
 <p>Beautiful wooden bookshelf.</p>
+
 <p class="price">₹10,000</p>
+
 <p class="available">✅ Available</p>
-<button class="buy-btn" onclick="openOrder('Bookshelf'); event.stopPropagation();">
+
 <button class="buy-btn"
-onclick="addToCart('Sofa',25000); event.stopPropagation();">
+onclick="addToCart('Bookshelf',10000);event.stopPropagation();">
 🛒 Add to Cart
 </button>
 
+<button class="buy-btn"
+onclick="openOrder('Bookshelf');event.stopPropagation();">
 Buy Now
 </button>
+
 </div>
 
 </section>
@@ -688,18 +789,25 @@ Buy Now
 
 <p class="modal-price" id="modalPrice"></p>
 
-<p class="modal-available">✅ Available</p>
-<button class="modal-buy" onclick="addCurrentProductToCart()" style="margin-bottom:10px;">
+<p class="modal-available">
+✅ Available
+</p>
+
+<button class="modal-buy"
+onclick="addCurrentProductToCart()">
 🛒 Add to Cart
 </button>
 
-<button class="modal-buy" onclick="buyFromModal()">
-Buy Now 🛒
+<button class="modal-buy"
+onclick="buyFromModal()">
+Buy Now
 </button>
 
 </div>
 
 </div>
+
+
 <!-- CART -->
 
 <section id="cartSection">
@@ -712,7 +820,8 @@ Buy Now 🛒
 Total: ₹<span id="cartTotal">0</span>
 </div>
 
-<button class="cart-whatsapp" onclick="sendCartToWhatsApp()">
+<button class="cart-whatsapp"
+onclick="sendCartToWhatsApp()">
 📱 Order Cart on WhatsApp
 </button>
 
@@ -806,13 +915,21 @@ Order on WhatsApp 📱
 
 <h2>Contact Us</h2>
 
-<p>📞 Phone: <a href="tel:8579914270">8579914270</a></p>
+<p>
+📞 Phone:
+<a href="tel:8579914270">8579914270</a>
+</p>
 
-<p>📱 WhatsApp: <a href="https://wa.me/918579914270" target="_blank">
+<p>
+📱 WhatsApp:
+<a href="https://wa.me/918579914270" target="_blank">
 Chat on WhatsApp
-</a></p>
+</a>
+</p>
 
-<p>📍 Address: At-Malaypur, Dist.- Jamui, Bihar - 811313</p>
+<p>
+📍 Address: At-Malaypur, Dist.- Jamui, Bihar - 811313
+</p>
 
 <a class="map-btn"
 href="https://maps.app.goo.gl/JTsVc1KC7XA6JFsy8"
@@ -837,35 +954,36 @@ target="_blank">
 <script>
 
 let selectedProduct="";
-
 let modalProduct="";
+let modalPriceValue=0;
+
+let cart=[];
 
 
 /* PRODUCT DETAILS */
 
-function showProduct(name,description,price,image){
+function showProduct(name,description,price,image,priceValue){
 
-modalProduct=name;
+    modalProduct=name;
+    modalPriceValue=priceValue;
 
-document.getElementById("modalName").innerText=name;
+    document.getElementById("modalName").innerText=name;
 
-document.getElementById("modalDescription").innerText=description;
+    document.getElementById("modalDescription").innerText=description;
 
-document.getElementById("modalPrice").innerText=price;
+    document.getElementById("modalPrice").innerText=price;
 
-document.getElementById("modalImage").src=image;
+    document.getElementById("modalImage").src=image;
 
-document.getElementById("productModal").style.display="block";
-
+    document.getElementById("productModal").style.display="block";
 }
 
 
-/* CLOSE PRODUCT DETAILS */
+/* CLOSE PRODUCT */
 
 function closeProduct(){
 
-document.getElementById("productModal").style.display="none";
-
+    document.getElementById("productModal").style.display="none";
 }
 
 
@@ -873,119 +991,51 @@ document.getElementById("productModal").style.display="none";
 
 function buyFromModal(){
 
-closeProduct();
+    closeProduct();
 
-openOrder(modalProduct);
-
+    openOrder(modalProduct);
 }
 
 
-/* ORDER */
-
-function openOrder(product){
-
-selectedProduct=product;
-
-document.getElementById("selectedProduct").innerText=product;
-
-document.getElementById("orderSection").style.display="block";
-
-document.getElementById("orderSection").scrollIntoView({
-behavior:"smooth"
-});
-
-}
-
-
-/* WHATSAPP ORDER */
-
-function sendWhatsApp(event){
-
-event.preventDefault();
-
-let name=document.getElementById("name").value;
-
-let mobile=document.getElementById("mobile").value;
-
-let address=document.getElementById("address").value;
-
-
-let message=
-"🛋️ ANSHIV FURNITURE ORDER\n\n"+
-"Product: "+selectedProduct+"\n"+
-"Customer Name: "+name+"\n"+
-"Mobile: "+mobile+"\n"+
-"Address: "+address;
-
-
-let whatsappNumber="918579914270";
-
-
-let url=
-"https://wa.me/"+
-whatsappNumber+
-"?text="+
-encodeURIComponent(message);
-
-
-window.open(url,"_blank");
-
-}
-
-
-/* CLOSE POPUP WHEN CLICKING OUTSIDE */
-
-window.onclick=function(event){
-
-let modal=document.getElementById("productModal");
-
-if(event.target==modal){
-closeProduct();
-}
-
-}
-/* SHOPPING CART */
-
-let cart = [];
-
-
-/* ADD PRODUCT TO CART */
-
-function addToCart(name, price){
-
-let existingProduct = cart.find(item => item.name === name);
-
-if(existingProduct){
-
-existingProduct.quantity++;
-
-}else{
-
-cart.push({
-name:name,
-price:price,
-quantity:1
-});
-
-}
-
-updateCart();
-
-alert(name + " cart में add हो गया! 🛒");
-}
-
-
-/* ADD CURRENT PRODUCT FROM POPUP */
+/* ADD CURRENT PRODUCT */
 
 function addCurrentProductToCart(){
 
-let priceText = document.getElementById("modalPrice").innerText;
+    addToCart(modalProduct,modalPriceValue);
 
-let price = parseInt(
-priceText.replace("₹","").replace(/,/g,"")
-);
+    closeProduct();
+}
 
-addToCart(modalProduct,price);
+
+/* ADD TO CART */
+
+function addToCart(name,price){
+
+    let existingProduct=cart.find(function(item){
+
+        return item.name===name;
+
+    });
+
+
+    if(existingProduct){
+
+        existingProduct.quantity++;
+
+    }else{
+
+        cart.push({
+            name:name,
+            price:price,
+            quantity:1
+        });
+
+    }
+
+
+    updateCart();
+
+    alert(name+" Cart में add हो गया! 🛒");
 }
 
 
@@ -993,74 +1043,60 @@ addToCart(modalProduct,price);
 
 function updateCart(){
 
-let cartItems = document.getElementById("cartItems");
+    let cartItems=document.getElementById("cartItems");
 
-let cartCount = document.getElementById("cartCount");
+    let cartCount=document.getElementById("cartCount");
 
-let cartTotal = document.getElementById("cartTotal");
-
-cartItems.innerHTML = "";
-
-let totalItems = 0;
-
-let totalPrice = 0;
+    let cartTotal=document.getElementById("cartTotal");
 
 
-cart.forEach(function(item,index){
-
-totalItems += item.quantity;
-
-totalPrice += item.price * item.quantity;
+    cartItems.innerHTML="";
 
 
-cartItems.innerHTML += `
+    let totalItems=0;
 
-<div class="cart-item">
-
-<div class="cart-item-info">
-
-<b>$`{item.name}</b>
-
-<br>
-
-₹`${item.price.toLocaleString("en-IN")}
-
-</div>
+    let totalPrice=0;
 
 
-<div class="quantity">
+    cart.forEach(function(item,index){
 
-<button onclick="changeQuantity($`{index},-1)">
-−
-</button>
+        totalItems += item.quantity;
 
-<span>`${item.quantity}</span>
-
-<button onclick="changeQuantity($`{index},1)">
-+
-</button>
-
-</div>
+        totalPrice += item.price * item.quantity;
 
 
-<button class="remove-btn"
-onclick="removeFromCart(`${index})">
+        cartItems.innerHTML +=
 
-🗑️
+        '<div class="cart-item">'+
 
-</button>
+        '<div class="cart-item-info">'+
 
-</div>
+        '<b>'+item.name+'</b><br>'+
 
-`;
+        '₹'+item.price.toLocaleString("en-IN")+
 
-});
+        '</div>'+
+
+        '<div class="quantity">'+
+
+        '<button onclick="changeQuantity('+index+',-1)">−</button>'+
+
+        '<span>'+item.quantity+'</span>'+
+
+        '<button onclick="changeQuantity('+index+',1)">+</button>'+
+
+        '</div>'+
+
+        '<button class="remove-btn" onclick="removeFromCart('+index+')">🗑️</button>'+
+
+        '</div>';
+
+    });
 
 
-cartCount.innerText = totalItems;
+    cartCount.innerText=totalItems;
 
-cartTotal.innerText = totalPrice.toLocaleString("en-IN");
-
+    cartTotal.innerText=totalPrice.toLocaleString("en-IN");
 }
 
 
@@ -1068,29 +1104,27 @@ cartTotal.innerText = totalPrice.toLocaleString("en-IN");
 
 function changeQuantity(index,change){
 
-cart[index].quantity += change;
+    cart[index].quantity += change;
 
 
-if(cart[index].quantity <= 0){
+    if(cart[index].quantity<=0){
 
-cart.splice(index,1);
+        cart.splice(index,1);
 
+    }
+
+
+    updateCart();
 }
 
 
-updateCart();
-
-}
-
-
-/* REMOVE PRODUCT */
+/* REMOVE */
 
 function removeFromCart(index){
 
-cart.splice(index,1);
+    cart.splice(index,1);
 
-updateCart();
-
+    updateCart();
 }
 
 
@@ -1098,78 +1132,101 @@ updateCart();
 
 function openCart(){
 
-document.getElementById("cartSection").style.display="block";
+    document.getElementById("cartSection").style.display="block";
 
-document.getElementById("cartSection").scrollIntoView({
-behavior:"smooth"
-});
+    document.getElementById("cartSection").scrollIntoView({
+        behavior:"smooth"
+    });
 
-updateCart();
-
+    updateCart();
 }
 
 
-/* SEND CART TO WHATSAPP */
+/* ORDER */
+
+function openOrder(product){
+
+    selectedProduct=product;
+
+    document.getElementById("selectedProduct").innerText=product;
+
+    document.getElementById("orderSection").style.display="block";
+
+    document.getElementById("orderSection").scrollIntoView({
+        behavior:"smooth"
+    });
+}
+
+
+/* NORMAL WHATSAPP ORDER */
+
+function sendWhatsApp(event){
+
+    event.preventDefault();
+
+
+    let name=document.getElementById("name").value;
+
+    let mobile=document.getElementById("mobile").value;
+
+    let address=document.getElementById("address").value;
+
+
+    let message=
+
+    "🛋️ ANSHIV FURNITURE ORDER\n\n"+
+
+    "Product: "+selectedProduct+"\n"+
+
+    "Customer Name: "+name+"\n"+
+
+    "Mobile: "+mobile+"\n"+
+
+    "Address: "+address;
+
+
+    let whatsappNumber="918579914270";
+
+
+    let url=
+
+    "https://wa.me/"+
+    whatsappNumber+
+    "?text="+
+    encodeURIComponent(message);
+
+
+    window.open(url,"_blank");
+}
+
+
+/* CART WHATSAPP ORDER */
 
 function sendCartToWhatsApp(){
 
-if(cart.length === 0){
+    if(cart.length===0){
 
-alert("आपका Cart खाली है। पहले कोई Product Add करें।");
+        alert("आपका Cart खाली है। पहले Product Add करें।");
 
-return;
-
-}
-
-
-let message =
-"🛋️ ANSHIV FURNITURE ORDER\n\n";
+        return;
+    }
 
 
-let total = 0;
+    let message=
+    "🛋️ ANSHIV FURNITURE CART ORDER\n\n";
 
 
-cart.forEach(function(item){
-
-let itemTotal = item.price * item.quantity;
-
-total += itemTotal;
+    let total=0;
 
 
-message +=
-"Product: " + item.name + "\n" +
-"Quantity: " + item.quantity + "\n" +
-"Price: ₹" +
-item.price.toLocaleString("en-IN") + "\n" +
-"Subtotal: ₹" +
-itemTotal.toLocaleString("en-IN") +
-"\n\n";
+    cart.forEach(function(item){
 
-});
+        let subtotal=item.price*item.quantity;
+
+        total += subtotal;
 
 
-message +=
-"TOTAL: ₹" +
-total.toLocaleString("en-IN") +
-"\n\n" +
-"Please confirm my order.";
-
-
-let whatsappNumber = "918579914270";
-
-
-let url =
-"https://wa.me/" +
-whatsappNumber +
-"?text=" +
-encodeURIComponent(message);
-
-
-window.open(url,"_blank");
-
-}
-
-</script>
-
-</body>
-</html>
+        message +=
+        "Product: "+item.name+"\n"+
+        "Quantity: "+item.quantity+"\n"+
+        "Price: ₹"+item.price.toLocaleStri
