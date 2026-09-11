@@ -1229,4 +1229,24 @@ function sendCartToWhatsApp(){
         message +=
         "Product: "+item.name+"\n"+
         "Quantity: "+item.quantity+"\n"+
-        "Price: ₹"+item.price.toLocaleStri
+        "Price: ₹"+item.price.toLocaleString("en-IN")+"\n"+
+        "Subtotal: ₹"+subtotal.toLocaleString("en-IN")+"\n\n";
+    });
+
+    message += "Total: ₹"+total.toLocaleString("en-IN");
+
+    let whatsappNumber="918579914270";
+
+    let url=
+        "https://wa.me/"+
+        whatsappNumber+
+        "?text="+
+        encodeURIComponent(message);
+
+    window.open(url,"_blank");
+}
+
+</script>
+
+</body>
+</html>
