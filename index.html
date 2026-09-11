@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Anshiv Furniture</title>
+
+<style>
+*{
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#f5f5f5;
+    color:#333;
+}
+
+/* HEADER */
+header{
+    background:#4b2e1f;
+    color:white;
+    text-align:center;
+    padding:28px 10px;
+}
+
+header h1{
+    margin:0;
+    font-size:34px;
+}
+
+header p{
+    margin:8px 0 0;
+}
+
+/* NAVIGATION */
+nav{
+    background:#2d1b12;
+    text-align:center;
+    padding:15px;
+    position:sticky;
+    top:0;
+    z-index:10;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:0 10px;
+    font-weight:bold;
+}
+
+/* HOME */
+.home{
+    min-height:350px;
+    background:url("https://images.unsplash.com/photo-1600210492486-724fe5c67fb0")
+    center/cover;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:30px;
+}
+
+.home-box{
+    background:rgba(0,0,0,.65);
+    color:white;
+    padding:30px;
+    border-radius:15px;
+}
+
+.home-box h2{
+    font-size:36px;
+    margin:5px;
+}
+
+.home-box p{
+    font-size:18px;
+}
+
+.shop-btn{
+    display:inline-block;
+    background:#d2691e;
+    color:white;
+    padding:12px 25px;
+    border-radius:7px;
+    text-decoration:none;
+    margin-top:10px;
+}
+
+/* PRODUCTS */
+.title{
+    text-align:center;
+    color:#4b2e1f;
+    margin-top:40px;
+}
+
+.products{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+    padding:20px;
+}
+
+.card{
+    background:white;
+    width:280px;
+    padding:15px;
+    border-radius:12px;
+    box-shadow:0 4px 12px rgba(0,0,0,.15);
+    text-align:center;
+}
+
+.card img{
+    width:100%;
+    height:200px;
+    object-fit:cover;
+    border-radius:10px;
+}
+
+.card h3{
+    color:#4b2e1f;
+    font-size:22px;
+}
+
+.price{
+    color:#b45f06;
+    font-size:19px;
+    font-weight:bold;
+}
+
+.buy-btn{
+    background:#d2691e;
+    color:white;
+    border:none;
+    padding:11px 24px;
+    border-radius:7px;
+    cursor:pointer;
+    font-size:16px;
+}
+
+/* ABOUT */
+.about{
+    background:white;
+    margin-top:30px;
+    padding:40px 20px;
+    text-align:center;
+}
+
+.about h2{
+    color:#4b2e1f;
+}
+
+.about p{
+    max-width:700px;
+    margin:auto;
+    line-height:1.7;
+}
+
+/* REVIEWS */
+.reviews{
+    padding:30px 20px;
+    text-align:center;
+}
+
+.review{
+    background:white;
+    max-width:500px;
+    margin:15px auto;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 3px 10px rgba(0,0,0,.1);
+}
+
+/* ORDER */
+#orderSection{
+    display:none;
+    max-width:500px;
+    margin:40px auto;
+    background:white;
+    padding:25px;
+    border-radius:12px;
+    box-shadow:0 4px 15px rgba(0,0,0,.15);
+}
+
+#orderSection h2{
+    text-align:center;
+    color:#4b2e1f;
+}
+
+input,textarea{
+    width:100%;
+    padding:12px;
+    margin:8px 0 15px;
+    border:1px solid #ccc;
+    border-radius:6px;
+    font-size:16px;
+}
+
+textarea{
+    height:100px;
+}
+
+.whatsapp-btn{
+    width:100%;
+    background:green;
+    color:white;
+    border:none;
+    padding:13px;
+    border-radius:7px;
+    font-size:17px;
+}
+
+/* CONTACT */
+.contact{
+    background:#eee;
+    text-align:center;
+    padding:35px 20px;
+}
+
+.contact h2{
+    color:#4b2e1f;
+}
+
+/* FOOTER */
+footer{
+    background:#2d1b12;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+</style>
+</head>
+
+
+<body>
+
+<!-- HEADER -->
+
+<header>
+<h1>ANSHIV FURNITURE</h1>
+<p>Beautiful Furniture For Your Beautiful Home</p>
+</header>
+
+
+<!-- NAVIGATION -->
+
+<nav>
+<a href="#home">Home</a>
+<a href="#products">Products</a>
+<a href="#about">About</a>
+<a href="#reviews">Reviews</a>
+<a href="#contact">Contact</a>
+</nav>
+
+
+<!-- HOME -->
+
+<section class="home" id="home">
+
+<div class="home-box">
+
+<h2>Make Your Home Beautiful</h2>
+
+<p>Premium Furniture at the Best Price</p>
+
+<a class="shop-btn" href="#products">
+Shop Now
+</a>
+
+</div>
+
+</section>
+
+
+<!-- PRODUCTS -->
+
+<h2 class="title" id="products">
+Our Furniture Collection
+</h2>
+
+
+<section class="products">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc">
+<h3>Sofa</h3>
+<p>Comfortable modern sofa.</p>
+<p class="price">₹25,000</p>
+<button class="buy-btn" onclick="openOrder('Sofa')">
+Buy Now
+</button>
+</div>
+
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85">
+<h3>Double Bed</h3>
+<p>Strong wooden double bed.</p>
+<p class="price">₹35,000</p>
+<button class="buy-btn" onclick="openOrder('Double Bed')">
+Buy Now
+</button>
+</div>
+
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1533090481720-856c6e3c1fdc">
+<h3>Dining Table</h3>
+<p>Beautiful dining table.</p>
+<p class="price">₹18,000</p>
+<button class="buy-btn" onclick="openOrder('Dining Table')">
+Buy Now
+</button>
+</div>
+
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1551298370-9d3d53740c72">
+<h3>Chair</h3>
+<p>Comfortable wooden chair.</p>
+<p class="price">₹4,500</p>
+<button class="buy-btn" onclick="openOrder('Chair')">
+Buy Now
+</button>
+</div>
+
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1558997519-83ea9252edf8">
+<h3>Almirah</h3>
+<p>Spacious modern almirah.</p>
+<p class="price">₹22,000</p>
+<button class="buy-btn" onclick="openOrder('Almirah')">
+Buy Now
+</button>
+</div>
+
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1618220179428-22790b461013">
+<h3>Center Table</h3>
+<p>Stylish living room table.</p>
+<p class="price">₹8,000</p>
+<button class="buy-btn" onclick="openOrder('Center Table')">
+Buy Now
+</button>
+</div>
+
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0">
+<h3>Wooden Door</h3>
+<p>Premium wooden door.</p>
+<p class="price">₹15,000</p>
+<button class="buy-btn" onclick="openOrder('Wooden Door')">
+Buy Now
+</button>
+</div>
+
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1598300042247-d088f8ab3a91">
+<h3>Office Chair</h3>
+<p>Comfortable office chair.</p>
+<p class="price">₹7,500</p>
+<button class="buy-btn" onclick="openOrder('Office Chair')">
+Buy Now
+</button>
+</div>
+
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1550226891-ef816aed4a98">
+<h3>Wardrobe</h3>
+<p>Modern bedroom wardrobe.</p>
+<p class="price">₹28,000</p>
+<button class="buy-btn" onclick="openOrder('Wardrobe')">
+Buy Now
+</button>
+</div>
+
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1592078615290-033ee584e267">
+<h3>Bookshelf</h3>
+<p>Beautiful wooden bookshelf.</p>
+<p class="price">₹10,000</p>
+<button class="buy-btn" onclick="openOrder('Bookshelf')">
+Buy Now
+</button>
+</div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section class="about" id="about">
+
+<h2>About Anshiv Furniture</h2>
+
+<p>
+Welcome to Anshiv Furniture. We provide beautiful,
+comfortable and quality furniture for your home and office.
+Our goal is to provide stylish furniture at reasonable prices
+with excellent customer service.
+</p>
+
+</section>
+
+
+<!-- REVIEWS -->
+
+<section class="reviews" id="reviews">
+
+<h2 class="title">Customer Reviews</h2>
+
+<div class="review">
+⭐️⭐️⭐️⭐️⭐️
+<p>"Very beautiful furniture and good quality."</p>
+<b>Rahul</b>
+</div>
+
+<div class="review">
+⭐️⭐️⭐️⭐️⭐️
+<p>"The sofa quality is excellent."</p>
+<b>Amit</b>
+</div>
+
+</section>
+
+
+<!-- ORDER FORM -->
+
+<section id="orderSection">
+
+<h2>Place Your Order</h2>
+
+<p>
+<b>Selected Product:</b>
+<span id="selectedProduct"></span>
+</p>
+
+<form onsubmit="sendWhatsApp(event)">
+
+<label>Your Name</label>
+
+<input type="text"
+id="name"
+placeholder="Enter your name"
+required>
+
+
+<label>Mobile Number</label>
+
+<input type="tel"
+id="mobile"
+placeholder="Enter mobile number"
+maxlength="10"
+required>
+
+
+<label>Address</label>
+
+<textarea
+id="address"
+placeholder="Enter your full address"
+required></textarea>
+
+
+<button class="whatsapp-btn" type="submit">
+Order on WhatsApp 📱
+</button>
+
+</form>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section class="contact" id="contact">
+
+<h2>Contact Us</h2>
+
+<p>📞 Call us for furniture enquiries</p>
+
+<p>📱 WhatsApp Order Available</p>
+
+<p>🏠 Anshiv Furniture</p>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<p>© 2026 Anshiv Furniture</p>
+
+<p>Quality Furniture | Best Price | Happy Customers</p>
+
+</footer>
+
+
+<script>
+
+let selectedProduct="";
+
+function openOrder(product){
+
+selectedProduct=product;
+
+document.getElementById("selectedProduct").innerText=product;
+
+document.getElementById("orderSection").style.display="block";
+
+document.getElementById("orderSection").scrollIntoView({
+behavior:"smooth"
+});
+
+}
+
+
+function sendWhatsApp(event){
+
+event.preventDefault();
+
+let name=document.getElementById("name").value;
+
+let mobile=document.getElementById("mobile").value;
+
+let address=document.getElementById("address").value;
+
+
+let message=
+"🛋️ ANSHIV FURNITURE ORDER\n\n"+
+"Product: "+selectedProduct+"\n"+
+"Customer Name: "+name+"\n"+
+"Mobile: "+mobile+"\n"+
+"Address: "+address;
+
+
+let whatsappNumber="918579914270";
+
+
+let url=
+"https://wa.me/"+
+whatsappNumber+
+"?text="+
+encodeURIComponent(message);
+
+
+window.open(url,"_blank");
+
+}
+
+</script>
+
+</body>
+</html>
