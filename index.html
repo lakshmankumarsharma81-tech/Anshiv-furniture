@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -5,439 +6,439 @@
 
 <style>
 *{
-    box-sizing:border-box;
-    scroll-behavior:smooth;
+box-sizing:border-box;
+scroll-behavior:smooth;
 }
 
 body{
-    margin:0;
-    font-family:Arial,sans-serif;
-    background:#f5f5f5;
-    color:#333;
+margin:0;
+font-family:Arial,sans-serif;
+background:#f5f5f5;
+color:#333;
 }
 
 /* HEADER */
 header{
-    background:#4b2e1f;
-    color:white;
-    text-align:center;
-    padding:28px 10px;
+background:#4b2e1f;
+color:white;
+text-align:center;
+padding:28px 10px;
 }
 
 header h1{
-    margin:0;
-    font-size:34px;
+margin:0;
+font-size:34px;
 }
 
 header p{
-    margin:8px 0 0;
+margin:8px 0 0;
 }
 
 /* NAVIGATION */
 nav{
-    background:#2d1b12;
-    text-align:center;
-    padding:15px;
-    position:sticky;
-    top:0;
-    z-index:10;
+background:#2d1b12;
+text-align:center;
+padding:15px;
+position:sticky;
+top:0;
+z-index:10;
 }
 
 nav a{
-    color:white;
-    text-decoration:none;
-    margin:0 10px;
-    font-weight:bold;
+color:white;
+text-decoration:none;
+margin:0 10px;
+font-weight:bold;
 }
 
 .cart-btn{
-    background:#d2691e;
-    color:white;
-    border:none;
-    padding:10px 18px;
-    border-radius:7px;
-    cursor:pointer;
-    font-size:16px;
-    font-weight:bold;
+background:#d2691e;
+color:white;
+border:none;
+padding:10px 18px;
+border-radius:7px;
+cursor:pointer;
+font-size:16px;
+font-weight:bold;
 }
 
 /* HOME */
 .home{
-    min-height:350px;
-    background:url("https://images.unsplash.com/photo-1600210492486-724fe5c67fb0")
-    center/cover;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-    padding:30px;
+min-height:350px;
+background:url("https://images.unsplash.com/photo-1600210492486-724fe5c67fb0")
+center/cover;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:30px;
 }
 
 .home-box{
-    background:rgba(0,0,0,.65);
-    color:white;
-    padding:30px;
-    border-radius:15px;
+background:rgba(0,0,0,.65);
+color:white;
+padding:30px;
+border-radius:15px;
 }
 
 .home-box h2{
-    font-size:36px;
-    margin:5px;
+font-size:36px;
+margin:5px;
 }
 
 .home-box p{
-    font-size:18px;
+font-size:18px;
 }
 
 .shop-btn{
-    display:inline-block;
-    background:#d2691e;
-    color:white;
-    padding:12px 25px;
-    border-radius:7px;
-    text-decoration:none;
-    margin-top:10px;
+display:inline-block;
+background:#d2691e;
+color:white;
+padding:12px 25px;
+border-radius:7px;
+text-decoration:none;
+margin-top:10px;
 }
 
 /* PRODUCTS */
 .title{
-    text-align:center;
-    color:#4b2e1f;
-    margin-top:40px;
+text-align:center;
+color:#4b2e1f;
+margin-top:40px;
 }
 
 .products{
-    display:flex;
-    justify-content:center;
-    gap:20px;
-    flex-wrap:wrap;
-    padding:20px;
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+padding:20px;
 }
 
 .card{
-    background:white;
-    width:280px;
-    padding:15px;
-    border-radius:12px;
-    box-shadow:0 4px 12px rgba(0,0,0,.15);
-    text-align:center;
-    cursor:pointer;
-    transition:.3s;
+background:white;
+width:280px;
+padding:15px;
+border-radius:12px;
+box-shadow:0 4px 12px rgba(0,0,0,.15);
+text-align:center;
+cursor:pointer;
+transition:.3s;
 }
 
 .card:hover{
-    transform:translateY(-5px);
+transform:translateY(-5px);
 }
 
 .card img{
-    width:100%;
-    height:200px;
-    object-fit:cover;
-    border-radius:10px;
+width:100%;
+height:200px;
+object-fit:cover;
+border-radius:10px;
 }
 
 .card h3{
-    color:#4b2e1f;
-    font-size:22px;
+color:#4b2e1f;
+font-size:22px;
 }
 
 .price{
-    color:#b45f06;
-    font-size:19px;
-    font-weight:bold;
+color:#b45f06;
+font-size:19px;
+font-weight:bold;
 }
 
 .available{
-    color:green;
-    font-weight:bold;
+color:green;
+font-weight:bold;
 }
 
 .buy-btn{
-    background:#d2691e;
-    color:white;
-    border:none;
-    padding:11px 18px;
-    border-radius:7px;
-    cursor:pointer;
-    font-size:15px;
-    margin:4px;
+background:#d2691e;
+color:white;
+border:none;
+padding:11px 18px;
+border-radius:7px;
+cursor:pointer;
+font-size:15px;
+margin:4px;
 }
 
 /* PRODUCT POPUP */
 #productModal{
-    display:none;
-    position:fixed;
-    z-index:100;
-    left:0;
-    top:0;
-    width:100%;
-    height:100%;
-    background:rgba(0,0,0,.75);
-    padding:20px;
-    overflow:auto;
+display:none;
+position:fixed;
+z-index:100;
+left:0;
+top:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.75);
+padding:20px;
+overflow:auto;
 }
 
 .modal-box{
-    background:white;
-    max-width:500px;
-    margin:40px auto;
-    padding:20px;
-    border-radius:15px;
-    text-align:center;
-    position:relative;
+background:white;
+max-width:500px;
+margin:40px auto;
+padding:20px;
+border-radius:15px;
+text-align:center;
+position:relative;
 }
 
 .modal-box img{
-    width:100%;
-    max-height:300px;
-    object-fit:cover;
-    border-radius:12px;
+width:100%;
+max-height:300px;
+object-fit:cover;
+border-radius:12px;
 }
 
 .modal-box h2{
-    color:#4b2e1f;
+color:#4b2e1f;
 }
 
 .modal-price{
-    color:#b45f06;
-    font-size:23px;
-    font-weight:bold;
+color:#b45f06;
+font-size:23px;
+font-weight:bold;
 }
 
 .modal-available{
-    color:green;
-    font-size:18px;
-    font-weight:bold;
+color:green;
+font-size:18px;
+font-weight:bold;
 }
 
 .close-btn{
-    position:absolute;
-    right:15px;
-    top:10px;
-    font-size:30px;
-    cursor:pointer;
+position:absolute;
+right:15px;
+top:10px;
+font-size:30px;
+cursor:pointer;
 }
 
 .modal-buy{
-    background:#d2691e;
-    color:white;
-    border:none;
-    padding:13px 25px;
-    border-radius:7px;
-    font-size:16px;
-    cursor:pointer;
-    margin:5px;
+background:#d2691e;
+color:white;
+border:none;
+padding:13px 25px;
+border-radius:7px;
+font-size:16px;
+cursor:pointer;
+margin:5px;
 }
 
 /* CART */
 #cartSection{
-    display:none;
-    max-width:600px;
-    margin:30px auto;
-    background:white;
-    padding:25px;
-    border-radius:12px;
-    box-shadow:0 4px 15px rgba(0,0,0,.15);
+display:none;
+max-width:600px;
+margin:30px auto;
+background:white;
+padding:25px;
+border-radius:12px;
+box-shadow:0 4px 15px rgba(0,0,0,.15);
 }
 
 #cartSection h2{
-    text-align:center;
-    color:#4b2e1f;
+text-align:center;
+color:#4b2e1f;
 }
 
 .cart-item{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:10px;
-    padding:15px 0;
-    border-bottom:1px solid #ddd;
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:10px;
+padding:15px 0;
+border-bottom:1px solid #ddd;
 }
 
 .cart-item-info{
-    flex:1;
+flex:1;
 }
 
 .cart-item-info b{
-    color:#4b2e1f;
+color:#4b2e1f;
 }
 
 .quantity{
-    display:flex;
-    align-items:center;
-    gap:8px;
+display:flex;
+align-items:center;
+gap:8px;
 }
 
 .quantity button{
-    border:none;
-    background:#4b2e1f;
-    color:white;
-    width:30px;
-    height:30px;
-    border-radius:5px;
-    cursor:pointer;
-    font-size:18px;
+border:none;
+background:#4b2e1f;
+color:white;
+width:30px;
+height:30px;
+border-radius:5px;
+cursor:pointer;
+font-size:18px;
 }
 
 .remove-btn{
-    border:none;
-    background:#d9534f;
-    color:white;
-    padding:7px 10px;
-    border-radius:5px;
-    cursor:pointer;
+border:none;
+background:#d9534f;
+color:white;
+padding:7px 10px;
+border-radius:5px;
+cursor:pointer;
 }
 
 .cart-total{
-    text-align:right;
-    font-size:21px;
-    font-weight:bold;
-    color:#b45f06;
-    margin-top:20px;
+text-align:right;
+font-size:21px;
+font-weight:bold;
+color:#b45f06;
+margin-top:20px;
 }
 
 .cart-whatsapp{
-    width:100%;
-    background:green;
-    color:white;
-    border:none;
-    padding:13px;
-    border-radius:7px;
-    font-size:17px;
-    cursor:pointer;
-    margin-top:15px;
+width:100%;
+background:green;
+color:white;
+border:none;
+padding:13px;
+border-radius:7px;
+font-size:17px;
+cursor:pointer;
+margin-top:15px;
 }
 
 /* ABOUT */
 .about{
-    background:white;
-    margin-top:30px;
-    padding:40px 20px;
-    text-align:center;
+background:white;
+margin-top:30px;
+padding:40px 20px;
+text-align:center;
 }
 
 .about h2{
-    color:#4b2e1f;
+color:#4b2e1f;
 }
 
 .about p{
-    max-width:700px;
-    margin:auto;
-    line-height:1.7;
+max-width:700px;
+margin:auto;
+line-height:1.7;
 }
 
 /* REVIEWS */
 .reviews{
-    padding:30px 20px;
-    text-align:center;
+padding:30px 20px;
+text-align:center;
 }
 
 .review{
-    background:white;
-    max-width:500px;
-    margin:15px auto;
-    padding:20px;
-    border-radius:10px;
-    box-shadow:0 3px 10px rgba(0,0,0,.1);
+background:white;
+max-width:500px;
+margin:15px auto;
+padding:20px;
+border-radius:10px;
+box-shadow:0 3px 10px rgba(0,0,0,.1);
 }
 
 /* ORDER */
 #orderSection{
-    display:none;
-    max-width:500px;
-    margin:40px auto;
-    background:white;
-    padding:25px;
-    border-radius:12px;
-    box-shadow:0 4px 15px rgba(0,0,0,.15);
+display:none;
+max-width:500px;
+margin:40px auto;
+background:white;
+padding:25px;
+border-radius:12px;
+box-shadow:0 4px 15px rgba(0,0,0,.15);
 }
 
 #orderSection h2{
-    text-align:center;
-    color:#4b2e1f;
+text-align:center;
+color:#4b2e1f;
 }
 
 input,textarea{
-    width:100%;
-    padding:12px;
-    margin:8px 0 15px;
-    border:1px solid #ccc;
-    border-radius:6px;
-    font-size:16px;
+width:100%;
+padding:12px;
+margin:8px 0 15px;
+border:1px solid #ccc;
+border-radius:6px;
+font-size:16px;
 }
 
 textarea{
-    height:100px;
+height:100px;
 }
 
 .whatsapp-btn{
-    width:100%;
-    background:green;
-    color:white;
-    border:none;
-    padding:13px;
-    border-radius:7px;
-    font-size:17px;
+width:100%;
+background:green;
+color:white;
+border:none;
+padding:13px;
+border-radius:7px;
+font-size:17px;
 }
 
 /* CONTACT */
 .contact{
-    background:#eee;
-    text-align:center;
-    padding:35px 20px;
+background:#eee;
+text-align:center;
+padding:35px 20px;
 }
 
 .contact h2{
-    color:#4b2e1f;
+color:#4b2e1f;
 }
 
 .contact a{
-    color:#4b2e1f;
-    font-weight:bold;
-    text-decoration:none;
+color:#4b2e1f;
+font-weight:bold;
+text-decoration:none;
 }
 
 .map-btn{
-    display:inline-block;
-    background:#d2691e;
-    color:white !important;
-    padding:12px 25px;
-    border-radius:7px;
-    margin-top:10px;
+display:inline-block;
+background:#d2691e;
+color:white !important;
+padding:12px 25px;
+border-radius:7px;
+margin-top:10px;
 }
 
 /* FOOTER */
 footer{
-    background:#2d1b12;
-    color:white;
-    text-align:center;
-    padding:20px;
+background:#2d1b12;
+color:white;
+text-align:center;
+padding:20px;
 }
 
 /* MOBILE */
 @media(max-width:600px){
 
-    header h1{
-        font-size:28px;
-    }
+header h1{
+font-size:28px;
+}
 
-    nav a{
-        margin:0 5px;
-        font-size:14px;
-    }
+nav a{
+margin:0 5px;
+font-size:14px;
+}
 
-    .home-box h2{
-        font-size:28px;
-    }
+.home-box h2{
+font-size:28px;
+}
 
-    .card{
-        width:100%;
-        max-width:330px;
-    }
+.card{
+width:100%;
+max-width:330px;
+}
 
-    .cart-item{
-        flex-wrap:wrap;
-    }
+.cart-item{
+flex-wrap:wrap;
+}
 }
 </style>
 </head>
@@ -938,376 +939,471 @@ target="_blank">
 </a>
 
 </section>
-<!-- ================= SMALL FURNITURE ================= -->
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<section id="small-furniture" class="small-furniture">
-
-    <h2>🪑 Small Furniture Collection</h2>
-
-    <p class="small-subtitle">
-        घर और ऑफिस के लिए छोटे, सुंदर और किफायती Furniture
-    </p>
-
-    <div class="small-products">
-
-        <!-- 1 -->
-        <div class="small-card">
-            <img src="https://images.unsplash.com/photo-1540932239986-30128078f3c5?auto=format&fit=crop&w=700&q=80">
-            <div class="small-info">
-                <h3>Wall Folding Table</h3>
-                <p>दीवार पर लगाने वाली Folding Table। Laptop और Study के लिए उपयोगी।</p>
-
-                <p><b>🔨 बनाने की लागत:</b> ₹1,500 – ₹1,800</p>
-                <p><b>💰 बिक्री कीमत:</b> ₹2,500 – ₹3,000</p>
-                <p class="profit">📈 Profit: ₹700 – ₹1,100</p>
-                <p class="available">✅ Available</p>
-
-                <button onclick="addToCart('Wall Folding Table',2500)">
-                    🛒 Add to Cart
-                </button>
-
-                <button class="buy-small"
-                    onclick="openOrder('Wall Folding Table',2500)">
-                    Buy Now
-                </button>
-            </div>
-        </div>
-
-
-        <!-- 2 -->
-        <div class="small-card">
-            <img src="https://images.unsplash.com/photo-1603006905003-be475563bc59?auto=format&fit=crop&w=700&q=80">
-            <div class="small-info">
-                <h3>पूजा चौकी</h3>
-                <p>पूजा घर और मंदिर के लिए सुंदर छोटी Wooden Pooja Chowki।</p>
-
-                <p><b>🔨 बनाने की लागत:</b> ₹800 – ₹1,200</p>
-                <p><b>💰 बिक्री कीमत:</b> ₹1,500 – ₹2,500</p>
-                <p class="profit">📈 Profit: ₹600 – ₹1,300</p>
-                <p class="available">✅ Available</p>
-
-                <button onclick="addToCart('Pooja Chowki',1500)">
-                    🛒 Add to Cart
-                </button>
-
-                <button class="buy-small"
-                    onclick="openOrder('Pooja Chowki',1500)">
-                    Buy Now
-                </button>
-            </div>
-        </div>
-
-
-        <!-- 3 -->
-        <div class="small-card">
-            <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=700&q=80">
-            <div class="small-info">
-                <h3>Laptop / Study Table</h3>
-                <p>पढ़ाई, Laptop और Work From Home के लिए Compact Table।</p>
-
-                <p><b>🔨 बनाने की लागत:</b> ₹1,800 – ₹2,500</p>
-                <p><b>💰 बिक्री कीमत:</b> ₹3,000 – ₹3,500</p>
-                <p class="profit">📈 Profit: ₹1,000 – ₹1,200</p>
-                <p class="available">✅ Available</p>
-
-                <button onclick="addToCart('Laptop Study Table',3000)">
-                    🛒 Add to Cart
-                </button>
-
-                <button class="buy-small"
-                    onclick="openOrder('Laptop Study Table',3000)">
-                    Buy Now
-                </button>
-            </div>
-        </div>
-
-
-        <!-- 4 -->
-        <div class="small-card">
-            <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=700&q=80">
-            <div class="small-info">
-                <h3>Bedside Table</h3>
-                <p>Bed के पास रखने के लिए छोटा और सुंदर Table।</p>
-
-                <p><b>🔨 बनाने की लागत:</b> ₹1,200 – ₹1,800</p>
-                <p><b>💰 बिक्री कीमत:</b> ₹2,000 – ₹2,500</p>
-                <p class="profit">📈 Profit: ₹700 – ₹1,000</p>
-                <p class="available">✅ Available</p>
-
-                <button onclick="addToCart('Bedside Table',2000)">
-                    🛒 Add to Cart
-                </button>
-
-                <button class="buy-small"
-                    onclick="openOrder('Bedside Table',2000)">
-                    Buy Now
-                </button>
-            </div>
-        </div>
-
-
-        <!-- 5 -->
-        <div class="small-card">
-            <img src="https://images.unsplash.com/photo-1558997519-83ea9252edf8?auto=format&fit=crop&w=700&q=80">
-            <div class="small-info">
-                <h3>Small Shoe Rack</h3>
-                <p>घर के Entrance के लिए Compact 3–4 Layer Shoe Rack।</p>
-
-                <p><b>🔨 बनाने की लागत:</b> ₹1,500 – ₹2,500</p>
-                <p><b>💰 बिक्री कीमत:</b> ₹2,500 – ₹4,000</p>
-                <p class="profit">📈 Profit: ₹1,000 – ₹1,500</p>
-                <p class="available">✅ Available</p>
-
-                <button onclick="addToCart('Small Shoe Rack',2500)">
-                    🛒 Add to Cart
-                </button>
-
-                <button class="buy-small"
-                    onclick="openOrder('Small Shoe Rack',2500)">
-                    Buy Now
-                </button>
-            </div>
-        </div>
-
-
-        <!-- 6 -->
-        <div class="small-card">
-            <img src="https://images.unsplash.com/photo-1594620302200-9a762244a156?auto=format&fit=crop&w=700&q=80">
-            <div class="small-info">
-                <h3>Wall / Book Shelf</h3>
-                <p>Books, शोपीस और Plants रखने के लिए सुंदर Wall Shelf।</p>
-
-                <p><b>🔨 बनाने की लागत:</b> ₹800 – ₹1,500</p>
-                <p><b>💰 बिक्री कीमत:</b> ₹1,500 – ₹2,500</p>
-                <p class="profit">📈 Profit: ₹700 – ₹1,000</p>
-                <p class="available">✅ Available</p>
-
-                <button onclick="addToCart('Wall Book Shelf',1500)">
-                    🛒 Add to Cart
-                </button>
-
-                <button class="buy-small"
-                    onclick="openOrder('Wall Book Shelf',1500)">
-                    Buy Now
-                </button>
-            </div>
-        </div>
-
-
-        <!-- 7 -->
-        <div class="small-card">
-            <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=700&q=80">
-            <div class="small-info">
-                <h3>Kitchen Rack</h3>
-                <p>मसाले, बर्तन और Kitchen सामान रखने के लिए Rack।</p>
-
-                <p><b>🔨 बनाने की लागत:</b> ₹1,000 – ₹1,800</p>
-                <p><b>💰 बिक्री कीमत:</b> ₹1,800 – ₹3,000</p>
-                <p class="profit">📈 Profit: ₹600 – ₹1,200</p>
-                <p class="available">✅ Available</p>
-
-                <button onclick="addToCart('Kitchen Rack',1800)">
-                    🛒 Add to Cart
-                </button>
-
-                <button class="buy-small"
-                    onclick="openOrder('Kitchen Rack',1800)">
-                    Buy Now
-                </button>
-            </div>
-        </div>
-
-
-        <!-- 8 -->
-        <div class="small-card">
-            <img src="https://images.unsplash.com/photo-1485955900006-10f4d324d411?auto=format&fit=crop&w=700&q=80">
-            <div class="small-info">
-                <h3>Wooden Plant Stand</h3>
-                <p>घर, Balcony और Office के लिए सुंदर Plant Stand।</p>
-
-                <p><b>🔨 बनाने की लागत:</b> ₹500 – ₹800</p>
-                <p><b>💰 बिक्री कीमत:</b> ₹1,000 – ₹1,500</p>
-                <p class="profit">📈 Profit: ₹500 – ₹700</p>
-                <p class="available">✅ Available</p>
-
-                <button onclick="addToCart('Wooden Plant Stand',1000)">
-                    🛒 Add to Cart
-                </button>
-
-                <button class="buy-small"
-                    onclick="openOrder('Wooden Plant Stand',1000)">
-                    Buy Now
-                </button>
-            </div>
-        </div>
-
-
-        <!-- 9 -->
-        <div class="small-card">
-            <img src="https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?auto=format&fit=crop&w=700&q=80">
-            <div class="small-info">
-                <h3>Wooden Stool</h3>
-                <p>घर, Kitchen और Office के लिए मजबूत Wooden Stool।</p>
-
-                <p><b>🔨 बनाने की लागत:</b> ₹500 – ₹800</p>
-                <p><b>💰 बिक्री कीमत:</b> ₹1,000 – ₹1,200</p>
-                <p class="profit">📈 Profit: ₹500 – ₹600</p>
-                <p class="available">✅ Available</p>
-
-                <button onclick="addToCart('Wooden Stool',1000)">
-                    🛒 Add to Cart
-                </button>
-
-                <button class="buy-small"
-                    onclick="openOrder('Wooden Stool',1000)">
-                    Buy Now
-                </button>
-            </div>
-        </div>
-
-
-        <!-- 10 -->
-        <div class="small-card">
-            <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=700&q=80">
-            <div class="small-info">
-                <h3>Key Holder + Shelf</h3>
-                <p>घर के Entrance और Office के लिए Key Holder और Shelf।</p>
-
-                <p><b>🔨 बनाने की लागत:</b> ₹300 – ₹500</p>
-                <p><b>💰 बिक्री कीमत:</b> ₹600 – ₹800</p>
-                <p class="profit">📈 Profit: ₹300 – ₹400</p>
-                <p class="available">✅ Available</p>
-
-                <button onclick="addToCart('Key Holder Shelf',600)">
-                    🛒 Add to Cart
-                </button>
-
-                <button class="buy-small"
-                    onclick="openOrder('Key Holder Shelf',600)">
-                    Buy Now
-                </button>
-            </div>
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ================= SMALL FURNITURE CSS ================= -->
+<title>Anshiv Furniture</title>
 
 <style>
 
-.small-furniture{
-    padding:50px 20px;
-    background:#f8f3ee;
+*{
+box-sizing:border-box;
+scroll-behavior:smooth;
 }
 
-.small-furniture h2{
-    text-align:center;
-    color:#4b2e1f;
-    font-size:32px;
-    margin-bottom:10px;
+body{
+margin:0;
+font-family:Arial,sans-serif;
+background:#f8f3ee;
+color:#333;
 }
 
-.small-subtitle{
-    text-align:center;
-    color:#555;
-    margin-bottom:35px;
+/* HEADER */
+
+header{
+background:#4b2e1f;
+color:white;
+padding:25px 15px;
+text-align:center;
 }
 
-.small-products{
-    max-width:1200px;
-    margin:auto;
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-    gap:25px;
+header h1{
+margin:0;
+font-size:35px;
 }
 
-.small-card{
-    background:white;
-    border-radius:15px;
-    overflow:hidden;
-    box-shadow:0 5px 15px rgba(0,0,0,0.15);
-    transition:0.3s;
+header p{
+margin:8px 0 0;
+font-size:17px;
 }
 
-.small-card:hover{
-    transform:translateY(-5px);
+/* NAVIGATION */
+
+nav{
+background:#2d1b12;
+padding:12px;
+text-align:center;
+position:sticky;
+top:0;
+z-index:1000;
 }
 
-.small-card img{
-    width:100%;
-    height:210px;
-    object-fit:cover;
+nav a{
+color:white;
+text-decoration:none;
+margin:0 10px;
+font-weight:bold;
 }
 
-.small-info{
-    padding:18px;
+nav a:hover{
+color:#ffb36b;
 }
 
-.small-info h3{
-    color:#4b2e1f;
-    margin-top:0;
+/* HERO */
+
+.hero{
+text-align:center;
+padding:60px 20px;
+background:#ead8c8;
 }
 
-.small-info p{
-    color:#555;
-    line-height:1.5;
+.hero h2{
+font-size:40px;
+color:#4b2e1f;
+margin:0 0 15px;
 }
 
-.small-info .profit{
-    color:green;
-    font-weight:bold;
+.hero p{
+font-size:20px;
 }
 
-.small-info .available{
-    color:#008000;
-    font-weight:bold;
+/* BUTTON */
+
+.btn{
+display:inline-block;
+background:#d2691e;
+color:white;
+padding:13px 22px;
+border-radius:8px;
+text-decoration:none;
+font-weight:bold;
+border:none;
+cursor:pointer;
 }
 
-.small-info button{
-    background:#d2691e;
-    color:white;
-    border:none;
-    padding:11px 15px;
-    border-radius:7px;
-    cursor:pointer;
-    margin:5px 3px 0 0;
-    font-weight:bold;
+.btn:hover{
+background:#4b2e1f;
 }
 
-.small-info button:hover{
-    background:#4b2e1f;
+/* PRODUCTS */
+
+section{
+padding:50px 20px;
 }
 
-.small-info .buy-small{
-    background:#4b2e1f;
+.section-title{
+text-align:center;
+color:#4b2e1f;
+font-size:32px;
+margin-bottom:10px;
 }
 
-.small-info .buy-small:hover{
-    background:#d2691e;
+.section-subtitle{
+text-align:center;
+color:#666;
+margin-bottom:35px;
 }
+
+.products{
+max-width:1200px;
+margin:auto;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:25px;
+}
+
+.product-card{
+background:white;
+border-radius:15px;
+overflow:hidden;
+box-shadow:0 5px 15px rgba(0,0,0,.15);
+transition:.3s;
+}
+
+.product-card:hover{
+transform:translateY(-6px);
+}
+
+.product-card img{
+width:100%;
+height:220px;
+object-fit:cover;
+}
+
+.product-info{
+padding:18px;
+}
+
+.product-info h3{
+color:#4b2e1f;
+margin-top:0;
+font-size:21px;
+}
+
+.product-info p{
+line-height:1.5;
+}
+
+.price{
+color:#b44c00;
+font-size:18px;
+font-weight:bold;
+}
+
+.profit{
+color:green;
+font-weight:bold;
+}
+
+.available{
+color:#008000;
+font-weight:bold;
+}
+
+.product-buttons{
+display:flex;
+gap:8px;
+flex-wrap:wrap;
+}
+
+.product-buttons button{
+border:0;
+padding:11px 14px;
+border-radius:7px;
+cursor:pointer;
+color:white;
+font-weight:bold;
+background:#d2691e;
+}
+
+.product-buttons .buy{
+background:#4b2e1f;
+}
+
+/* CART */
+
+#cart{
+background:#fff;
+}
+
+.cart-box{
+max-width:700px;
+margin:auto;
+background:white;
+padding:25px;
+border-radius:15px;
+box-shadow:0 5px 15px rgba(0,0,0,.12);
+}
+
+.cart-item{
+display:flex;
+justify-content:space-between;
+border-bottom:1px solid #ddd;
+padding:12px 0;
+}
+
+.cart-total{
+font-size:22px;
+font-weight:bold;
+color:#4b2e1f;
+margin-top:20px;
+}
+
+/* ORDER */
+
+#orderSection{
+background:#ead8c8;
+}
+
+.order-box{
+max-width:600px;
+margin:auto;
+background:white;
+padding:25px;
+border-radius:15px;
+box-shadow:0 5px 15px rgba(0,0,0,.12);
+}
+
+.order-box input,
+.order-box textarea{
+width:100%;
+padding:13px;
+margin:8px 0 15px;
+border:1px solid #ccc;
+border-radius:7px;
+font-size:16px;
+}
+
+.order-box button{
+width:100%;
+padding:14px;
+background:#25D366;
+color:white;
+border:0;
+border-radius:8px;
+font-size:17px;
+font-weight:bold;
+cursor:pointer;
+}
+
+/* ABOUT */
+
+.about{
+max-width:900px;
+margin:auto;
+text-align:center;
+line-height:1.7;
+}
+
+/* CONTACT */
+
+.contact{
+text-align:center;
+}
+
+.contact-box{
+max-width:700px;
+margin:auto;
+background:white;
+padding:25px;
+border-radius:15px;
+box-shadow:0 5px 15px rgba(0,0,0,.12);
+}
+
+.whatsapp{
+background:#25D366;
+color:white;
+padding:13px 20px;
+display:inline-block;
+border-radius:8px;
+text-decoration:none;
+font-weight:bold;
+}
+
+/* FOOTER */
+
+footer{
+background:#2d1b12;
+color:white;
+text-align:center;
+padding:25px 15px;
+}
+
+/* MOBILE */
 
 @media(max-width:600px){
 
-    .small-furniture{
-        padding:35px 12px;
-    }
+header h1{
+font-size:28px;
+}
 
-    .small-furniture h2{
-        font-size:26px;
-    }
+nav a{
+display:inline-block;
+margin:5px;
+font-size:14px;
+}
 
-    .small-products{
-        grid-template-columns:1fr;
-    }
+.hero h2{
+font-size:30px;
+}
 
 }
 
 </style>
+</head>
 
-<!-- ================= END SMALL FURNITURE ================= -->
+
+<body>
+
+<!-- HEADER -->
+
+<header>
+<h1>ANSHIV FURNITURE</h1>
+<p>Beautiful Furniture For Your Beautiful Home</p>
+</header>
+
+
+<!-- NAVIGATION -->
+
+<nav>
+
+<a href="#home">Home</a>
+<a href="#products">Products</a>
+<a href="#small-furniture">Small Furniture</a>
+<a href="#about">About</a>
+<a href="#cart">🛒 Cart (<span id="cartCount">0</span>)</a>
+<a href="#contact">Contact</a>
+
+</nav>
+
+
+<!-- HOME -->
+
+<section class="hero" id="home">
+
+<h2>Make Your Home Beautiful</h2>
+
+<p>Premium Furniture at the Best Price</p>
+
+<a href="#small-furniture" class="btn">
+Shop Small Furniture
+</a>
+
+</section>
+
+
+<!-- SMALL FURNITURE -->
+
+<section id="small-furniture">
+
+<h2 class="section-title">
+🪑 Small Furniture Collection
+</h2>
+
+<p class="section-subtitle">
+घर और छोटे ऑफिस के लिए छोटे, सुंदर और किफायती Furniture
+</p>
+
+
+<div class="products">
+
+
+<!-- 1 -->
+
+<div class="product-card">
+
+<img src="https://images.unsplash.com/photo-1518455027359-f3f8164ba6b2?auto=format&fit=crop&w=700&q=80">
+
+<div class="product-info">
+
+<h3>1. Wall Folding Table</h3>
+
+<p>
+दीवार पर लगाने वाली Folding Table।
+Laptop, Study और Work From Home के लिए उपयोगी।
+</p>
+
+<p>🔨 <b>बनाने की लागत:</b> ₹1,500 – ₹1,800</p>
+
+<p class="price">
+💰 बिक्री कीमत: ₹2,500 – ₹3,000
+</p>
+
+<p class="profit">
+📈 Profit: ₹700 – ₹1,100
+</p>
+
+<p class="available">
+✅ Available
+</p>
+
+<div class="product-buttons">
+
+<button onclick="addToCart('Wall Folding Table',2500)">
+🛒 Add to Cart
+</button>
+
+<button class="buy"
+onclick="openOrder('Wall Folding Table',2500)">
+Buy Now
+</button>
+
+</div>
+
+</div>
+</div>
+
+
+<!-- 2 -->
+
+<div class="product-card">
+
+<img src="https://images.unsplash.com/photo-1603006905003-be475563bc59?auto=format&fit=crop&w=700&q=80">
+
+<div class="product-info">
+
+<h3>2. Pooja Chowki</h3>
+
+<p>
+पूजा घर और मंदिर के लिए सुंदर छोटी Wooden Pooja Chowki।
+</p>
+
+<p>🔨 <b>बनाने की लागत:</b> ₹800 – ₹1,200</p>
+
+<p class="price">
+💰 बिक्री कीमत: ₹1,500 – ₹2,500
+</p>
+
+<p class="profit">
+📈 Profit: ₹600 – ₹1,300
+</p>
+
+<p class="available">
+✅ Available
+</p>
+
+<div class="product-buttons">
+
+<button onclick="addToCart('Pooja Chowki',1500)">
+🛒 Add to Cart
+</button>
+
+<button class="buy"
+onclick="openOrder('Pooja Chowki',150
+
 
 <!-- FOOTER -->
 
@@ -1333,18 +1429,18 @@ let cart=[];
 
 function showProduct(name,description,price,image,priceValue){
 
-    modalProduct=name;
-    modalPriceValue=priceValue;
+modalProduct=name;
+modalPriceValue=priceValue;
 
-    document.getElementById("modalName").innerText=name;
+document.getElementById("modalName").innerText=name;
 
-    document.getElementById("modalDescription").innerText=description;
+document.getElementById("modalDescription").innerText=description;
 
-    document.getElementById("modalPrice").innerText=price;
+document.getElementById("modalPrice").innerText=price;
 
-    document.getElementById("modalImage").src=image;
+document.getElementById("modalImage").src=image;
 
-    document.getElementById("productModal").style.display="block";
+document.getElementById("productModal").style.display="block";
 }
 
 
@@ -1352,7 +1448,7 @@ function showProduct(name,description,price,image,priceValue){
 
 function closeProduct(){
 
-    document.getElementById("productModal").style.display="none";
+document.getElementById("productModal").style.display="none";
 }
 
 
@@ -1360,9 +1456,9 @@ function closeProduct(){
 
 function buyFromModal(){
 
-    closeProduct();
+closeProduct();
 
-    openOrder(modalProduct);
+openOrder(modalProduct);
 }
 
 
@@ -1370,9 +1466,9 @@ function buyFromModal(){
 
 function addCurrentProductToCart(){
 
-    addToCart(modalProduct,modalPriceValue);
+addToCart(modalProduct,modalPriceValue);
 
-    closeProduct();
+closeProduct();
 }
 
 
@@ -1380,31 +1476,31 @@ function addCurrentProductToCart(){
 
 function addToCart(name,price){
 
-    let existingProduct=cart.find(function(item){
+let existingProduct=cart.find(function(item){
 
-        return item.name===name;
+return item.name===name;
 
-    });
-
-
-    if(existingProduct){
-
-        existingProduct.quantity++;
-
-    }else{
-
-        cart.push({
-            name:name,
-            price:price,
-            quantity:1
-        });
-
-    }
+});
 
 
-    updateCart();
+if(existingProduct){
 
-    alert(name+" Cart में add हो गया! 🛒");
+existingProduct.quantity++;
+
+}else{
+
+cart.push({
+name:name,
+price:price,
+quantity:1
+});
+
+}
+
+
+updateCart();
+
+alert(name+" Cart में add हो गया! 🛒");
 }
 
 
@@ -1412,60 +1508,60 @@ function addToCart(name,price){
 
 function updateCart(){
 
-    let cartItems=document.getElementById("cartItems");
+let cartItems=document.getElementById("cartItems");
 
-    let cartCount=document.getElementById("cartCount");
+let cartCount=document.getElementById("cartCount");
 
-    let cartTotal=document.getElementById("cartTotal");
-
-
-    cartItems.innerHTML="";
+let cartTotal=document.getElementById("cartTotal");
 
 
-    let totalItems=0;
-
-    let totalPrice=0;
+cartItems.innerHTML="";
 
 
-    cart.forEach(function(item,index){
+let totalItems=0;
 
-        totalItems += item.quantity;
-
-        totalPrice += item.price * item.quantity;
+let totalPrice=0;
 
 
-        cartItems.innerHTML +=
+cart.forEach(function(item,index){
 
-        '<div class="cart-item">'+
+totalItems += item.quantity;
 
-        '<div class="cart-item-info">'+
-
-        '<b>'+item.name+'</b><br>'+
-
-        '₹'+item.price.toLocaleString("en-IN")+
-
-        '</div>'+
-
-        '<div class="quantity">'+
-
-        '<button onclick="changeQuantity('+index+',-1)">−</button>'+
-
-        '<span>'+item.quantity+'</span>'+
-
-        '<button onclick="changeQuantity('+index+',1)">+</button>'+
-
-        '</div>'+
-
-        '<button class="remove-btn" onclick="removeFromCart('+index+')">🗑️</button>'+
-
-        '</div>';
-
-    });
+totalPrice += item.price * item.quantity;
 
 
-    cartCount.innerText=totalItems;
+cartItems.innerHTML +=
 
-    cartTotal.innerText=totalPrice.toLocaleString("en-IN");
+'<div class="cart-item">'+
+
+'<div class="cart-item-info">'+
+
+'<b>'+item.name+'</b><br>'+
+
+'₹'+item.price.toLocaleString("en-IN")+
+
+'</div>'+
+
+'<div class="quantity">'+
+
+'<button onclick="changeQuantity('+index+',-1)">−</button>'+
+
+'<span>'+item.quantity+'</span>'+
+
+'<button onclick="changeQuantity('+index+',1)">+</button>'+
+
+'</div>'+
+
+'<button class="remove-btn" onclick="removeFromCart('+index+')">🗑️</button>'+
+
+'</div>';
+
+});
+
+
+cartCount.innerText=totalItems;
+
+cartTotal.innerText=totalPrice.toLocaleString("en-IN");
 }
 
 
@@ -1473,17 +1569,17 @@ function updateCart(){
 
 function changeQuantity(index,change){
 
-    cart[index].quantity += change;
+cart[index].quantity += change;
 
 
-    if(cart[index].quantity<=0){
+if(cart[index].quantity<=0){
 
-        cart.splice(index,1);
+cart.splice(index,1);
 
-    }
+}
 
 
-    updateCart();
+updateCart();
 }
 
 
@@ -1491,9 +1587,9 @@ function changeQuantity(index,change){
 
 function removeFromCart(index){
 
-    cart.splice(index,1);
+cart.splice(index,1);
 
-    updateCart();
+updateCart();
 }
 
 
@@ -1501,13 +1597,13 @@ function removeFromCart(index){
 
 function openCart(){
 
-    document.getElementById("cartSection").style.display="block";
+document.getElementById("cartSection").style.display="block";
 
-    document.getElementById("cartSection").scrollIntoView({
-        behavior:"smooth"
-    });
+document.getElementById("cartSection").scrollIntoView({
+behavior:"smooth"
+});
 
-    updateCart();
+updateCart();
 }
 
 
@@ -1515,15 +1611,15 @@ function openCart(){
 
 function openOrder(product){
 
-    selectedProduct=product;
+selectedProduct=product;
 
-    document.getElementById("selectedProduct").innerText=product;
+document.getElementById("selectedProduct").innerText=product;
 
-    document.getElementById("orderSection").style.display="block";
+document.getElementById("orderSection").style.display="block";
 
-    document.getElementById("orderSection").scrollIntoView({
-        behavior:"smooth"
-    });
+document.getElementById("orderSection").scrollIntoView({
+behavior:"smooth"
+});
 }
 
 
@@ -1531,41 +1627,41 @@ function openOrder(product){
 
 function sendWhatsApp(event){
 
-    event.preventDefault();
+event.preventDefault();
 
 
-    let name=document.getElementById("name").value;
+let name=document.getElementById("name").value;
 
-    let mobile=document.getElementById("mobile").value;
+let mobile=document.getElementById("mobile").value;
 
-    let address=document.getElementById("address").value;
-
-
-    let message=
-
-    "🛋️ ANSHIV FURNITURE ORDER\n\n"+
-
-    "Product: "+selectedProduct+"\n"+
-
-    "Customer Name: "+name+"\n"+
-
-    "Mobile: "+mobile+"\n"+
-
-    "Address: "+address;
+let address=document.getElementById("address").value;
 
 
-    let whatsappNumber="918579914270";
+let message=
+
+"🛋️ ANSHIV FURNITURE ORDER\n\n"+
+
+"Product: "+selectedProduct+"\n"+
+
+"Customer Name: "+name+"\n"+
+
+"Mobile: "+mobile+"\n"+
+
+"Address: "+address;
 
 
-    let url=
-
-    "https://wa.me/"+
-    whatsappNumber+
-    "?text="+
-    encodeURIComponent(message);
+let whatsappNumber="918579914270";
 
 
-    window.open(url,"_blank");
+let url=
+
+"https://wa.me/"+
+whatsappNumber+
+"?text="+
+encodeURIComponent(message);
+
+
+window.open(url,"_blank");
 }
 
 
@@ -1573,49 +1669,50 @@ function sendWhatsApp(event){
 
 function sendCartToWhatsApp(){
 
-    if(cart.length===0){
+if(cart.length===0){
 
-        alert("आपका Cart खाली है। पहले Product Add करें।");
+alert("आपका Cart खाली है। पहले Product Add करें।");
 
-        return;
-    }
-
-
-    let message=
-    "🛋️ ANSHIV FURNITURE CART ORDER\n\n";
+return;
+}
 
 
-    let total=0;
+let message=
+"🛋️ ANSHIV FURNITURE CART ORDER\n\n";
 
 
-    cart.forEach(function(item){
-
-        let subtotal=item.price*item.quantity;
-
-        total += subtotal;
+let total=0;
 
 
-        message +=
-        "Product: "+item.name+"\n"+
-        "Quantity: "+item.quantity+"\n"+
-        "Price: ₹"+item.price.toLocaleString("en-IN")+"\n"+
-        "Subtotal: ₹"+subtotal.toLocaleString("en-IN")+"\n\n";
-    });
+cart.forEach(function(item){
 
-    message += "Total: ₹"+total.toLocaleString("en-IN");
+let subtotal=item.price*item.quantity;
 
-    let whatsappNumber="918579914270";
+total += subtotal;
 
-    let url=
-        "https://wa.me/"+
-        whatsappNumber+
-        "?text="+
-        encodeURIComponent(message);
 
-    window.open(url,"_blank");
+message +=
+"Product: "+item.name+"\n"+
+"Quantity: "+item.quantity+"\n"+
+"Price: ₹"+item.price.toLocaleString("en-IN")+"\n"+
+"Subtotal: ₹"+subtotal.toLocaleString("en-IN")+"\n\n";
+});
+
+message += "Total: ₹"+total.toLocaleString("en-IN");
+
+let whatsappNumber="918579914270";
+
+let url=
+"https://wa.me/"+
+whatsappNumber+
+"?text="+
+encodeURIComponent(message);
+
+window.open(url,"_blank");
 }
 
 </script>
 
 </body>
 </html>
+
