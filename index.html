@@ -1,944 +1,3 @@
-
-<!DOCTYPE html>
-<html>
-<head>
-<title>Anshiv Furniture</title>
-
-<style>
-*{
-box-sizing:border-box;
-scroll-behavior:smooth;
-}
-
-body{
-margin:0;
-font-family:Arial,sans-serif;
-background:#f5f5f5;
-color:#333;
-}
-
-/* HEADER */
-header{
-background:#4b2e1f;
-color:white;
-text-align:center;
-padding:28px 10px;
-}
-
-header h1{
-margin:0;
-font-size:34px;
-}
-
-header p{
-margin:8px 0 0;
-}
-
-/* NAVIGATION */
-nav{
-background:#2d1b12;
-text-align:center;
-padding:15px;
-position:sticky;
-top:0;
-z-index:10;
-}
-
-nav a{
-color:white;
-text-decoration:none;
-margin:0 10px;
-font-weight:bold;
-}
-
-.cart-btn{
-background:#d2691e;
-color:white;
-border:none;
-padding:10px 18px;
-border-radius:7px;
-cursor:pointer;
-font-size:16px;
-font-weight:bold;
-}
-
-/* HOME */
-.home{
-min-height:350px;
-background:url("https://images.unsplash.com/photo-1600210492486-724fe5c67fb0")
-center/cover;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
-padding:30px;
-}
-
-.home-box{
-background:rgba(0,0,0,.65);
-color:white;
-padding:30px;
-border-radius:15px;
-}
-
-.home-box h2{
-font-size:36px;
-margin:5px;
-}
-
-.home-box p{
-font-size:18px;
-}
-
-.shop-btn{
-display:inline-block;
-background:#d2691e;
-color:white;
-padding:12px 25px;
-border-radius:7px;
-text-decoration:none;
-margin-top:10px;
-}
-
-/* PRODUCTS */
-.title{
-text-align:center;
-color:#4b2e1f;
-margin-top:40px;
-}
-
-.products{
-display:flex;
-justify-content:center;
-gap:20px;
-flex-wrap:wrap;
-padding:20px;
-}
-
-.card{
-background:white;
-width:280px;
-padding:15px;
-border-radius:12px;
-box-shadow:0 4px 12px rgba(0,0,0,.15);
-text-align:center;
-cursor:pointer;
-transition:.3s;
-}
-
-.card:hover{
-transform:translateY(-5px);
-}
-
-.card img{
-width:100%;
-height:200px;
-object-fit:cover;
-border-radius:10px;
-}
-
-.card h3{
-color:#4b2e1f;
-font-size:22px;
-}
-
-.price{
-color:#b45f06;
-font-size:19px;
-font-weight:bold;
-}
-
-.available{
-color:green;
-font-weight:bold;
-}
-
-.buy-btn{
-background:#d2691e;
-color:white;
-border:none;
-padding:11px 18px;
-border-radius:7px;
-cursor:pointer;
-font-size:15px;
-margin:4px;
-}
-
-/* PRODUCT POPUP */
-#productModal{
-display:none;
-position:fixed;
-z-index:100;
-left:0;
-top:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,.75);
-padding:20px;
-overflow:auto;
-}
-
-.modal-box{
-background:white;
-max-width:500px;
-margin:40px auto;
-padding:20px;
-border-radius:15px;
-text-align:center;
-position:relative;
-}
-
-.modal-box img{
-width:100%;
-max-height:300px;
-object-fit:cover;
-border-radius:12px;
-}
-
-.modal-box h2{
-color:#4b2e1f;
-}
-
-.modal-price{
-color:#b45f06;
-font-size:23px;
-font-weight:bold;
-}
-
-.modal-available{
-color:green;
-font-size:18px;
-font-weight:bold;
-}
-
-.close-btn{
-position:absolute;
-right:15px;
-top:10px;
-font-size:30px;
-cursor:pointer;
-}
-
-.modal-buy{
-background:#d2691e;
-color:white;
-border:none;
-padding:13px 25px;
-border-radius:7px;
-font-size:16px;
-cursor:pointer;
-margin:5px;
-}
-
-/* CART */
-#cartSection{
-display:none;
-max-width:600px;
-margin:30px auto;
-background:white;
-padding:25px;
-border-radius:12px;
-box-shadow:0 4px 15px rgba(0,0,0,.15);
-}
-
-#cartSection h2{
-text-align:center;
-color:#4b2e1f;
-}
-
-.cart-item{
-display:flex;
-align-items:center;
-justify-content:space-between;
-gap:10px;
-padding:15px 0;
-border-bottom:1px solid #ddd;
-}
-
-.cart-item-info{
-flex:1;
-}
-
-.cart-item-info b{
-color:#4b2e1f;
-}
-
-.quantity{
-display:flex;
-align-items:center;
-gap:8px;
-}
-
-.quantity button{
-border:none;
-background:#4b2e1f;
-color:white;
-width:30px;
-height:30px;
-border-radius:5px;
-cursor:pointer;
-font-size:18px;
-}
-
-.remove-btn{
-border:none;
-background:#d9534f;
-color:white;
-padding:7px 10px;
-border-radius:5px;
-cursor:pointer;
-}
-
-.cart-total{
-text-align:right;
-font-size:21px;
-font-weight:bold;
-color:#b45f06;
-margin-top:20px;
-}
-
-.cart-whatsapp{
-width:100%;
-background:green;
-color:white;
-border:none;
-padding:13px;
-border-radius:7px;
-font-size:17px;
-cursor:pointer;
-margin-top:15px;
-}
-
-/* ABOUT */
-.about{
-background:white;
-margin-top:30px;
-padding:40px 20px;
-text-align:center;
-}
-
-.about h2{
-color:#4b2e1f;
-}
-
-.about p{
-max-width:700px;
-margin:auto;
-line-height:1.7;
-}
-
-/* REVIEWS */
-.reviews{
-padding:30px 20px;
-text-align:center;
-}
-
-.review{
-background:white;
-max-width:500px;
-margin:15px auto;
-padding:20px;
-border-radius:10px;
-box-shadow:0 3px 10px rgba(0,0,0,.1);
-}
-
-/* ORDER */
-#orderSection{
-display:none;
-max-width:500px;
-margin:40px auto;
-background:white;
-padding:25px;
-border-radius:12px;
-box-shadow:0 4px 15px rgba(0,0,0,.15);
-}
-
-#orderSection h2{
-text-align:center;
-color:#4b2e1f;
-}
-
-input,textarea{
-width:100%;
-padding:12px;
-margin:8px 0 15px;
-border:1px solid #ccc;
-border-radius:6px;
-font-size:16px;
-}
-
-textarea{
-height:100px;
-}
-
-.whatsapp-btn{
-width:100%;
-background:green;
-color:white;
-border:none;
-padding:13px;
-border-radius:7px;
-font-size:17px;
-}
-
-/* CONTACT */
-.contact{
-background:#eee;
-text-align:center;
-padding:35px 20px;
-}
-
-.contact h2{
-color:#4b2e1f;
-}
-
-.contact a{
-color:#4b2e1f;
-font-weight:bold;
-text-decoration:none;
-}
-
-.map-btn{
-display:inline-block;
-background:#d2691e;
-color:white !important;
-padding:12px 25px;
-border-radius:7px;
-margin-top:10px;
-}
-
-/* FOOTER */
-footer{
-background:#2d1b12;
-color:white;
-text-align:center;
-padding:20px;
-}
-
-/* MOBILE */
-@media(max-width:600px){
-
-header h1{
-font-size:28px;
-}
-
-nav a{
-margin:0 5px;
-font-size:14px;
-}
-
-.home-box h2{
-font-size:28px;
-}
-
-.card{
-width:100%;
-max-width:330px;
-}
-
-.cart-item{
-flex-wrap:wrap;
-}
-}
-</style>
-</head>
-
-<body>
-
-<!-- HEADER -->
-
-<header>
-<h1>ANSHIV FURNITURE</h1>
-<p>Beautiful Furniture For Your Beautiful Home</p>
-</header>
-
-<!-- NAVIGATION -->
-
-<nav>
-<a href="#home">Home</a>
-<a href="#products">Products</a>
-<a href="#about">About</a>
-<a href="#reviews">Reviews</a>
-<a href="#contact">Contact</a>
-
-<button class="cart-btn" onclick="openCart()">
-🛒 Cart (<span id="cartCount">0</span>)
-</button>
-</nav>
-
-<!-- HOME -->
-
-<section class="home" id="home">
-
-<div class="home-box">
-
-<h2>Make Your Home Beautiful</h2>
-
-<p>Premium Furniture at the Best Price</p>
-
-<a class="shop-btn" href="#products">
-Shop Now
-</a>
-
-</div>
-
-</section>
-
-<!-- PRODUCTS -->
-
-<h2 class="title" id="products">
-Our Furniture Collection
-</h2>
-
-<section class="products">
-
-<!-- SOFA -->
-
-<div class="card"
-onclick="showProduct('Sofa','Comfortable modern sofa.','₹25,000','https://images.unsplash.com/photo-1555041469-a586c61ea9bc',25000)">
-
-<img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc">
-
-<h3>Sofa</h3>
-
-<p>Comfortable modern sofa.</p>
-
-<p class="price">₹25,000</p>
-
-<p class="available">✅ Available</p>
-
-<button class="buy-btn"
-onclick="addToCart('Sofa',25000);event.stopPropagation();">
-🛒 Add to Cart
-</button>
-
-<button class="buy-btn"
-onclick="openOrder('Sofa');event.stopPropagation();">
-Buy Now
-</button>
-
-</div>
-
-
-<!-- DOUBLE BED -->
-
-<div class="card"
-onclick="showProduct('Double Bed','Strong wooden double bed.','₹35,000','https://images.unsplash.com/photo-1505693416388-ac5ce068fe85',35000)">
-
-<img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85">
-
-<h3>Double Bed</h3>
-
-<p>Strong wooden double bed.</p>
-
-<p class="price">₹35,000</p>
-
-<p class="available">✅ Available</p>
-
-<button class="buy-btn"
-onclick="addToCart('Double Bed',35000);event.stopPropagation();">
-🛒 Add to Cart
-</button>
-
-<button class="buy-btn"
-onclick="openOrder('Double Bed');event.stopPropagation();">
-Buy Now
-</button>
-
-</div>
-
-
-<!-- DINING TABLE -->
-
-<div class="card"
-onclick="showProduct('Dining Table','Beautiful dining table.','₹18,000','https://images.unsplash.com/photo-1533090481720-856c6e3c1fdc',18000)">
-
-<img src="https://images.unsplash.com/photo-1533090481720-856c6e3c1fdc">
-
-<h3>Dining Table</h3>
-
-<p>Beautiful dining table.</p>
-
-<p class="price">₹18,000</p>
-
-<p class="available">✅ Available</p>
-
-<button class="buy-btn"
-onclick="addToCart('Dining Table',18000);event.stopPropagation();">
-🛒 Add to Cart
-</button>
-
-<button class="buy-btn"
-onclick="openOrder('Dining Table');event.stopPropagation();">
-Buy Now
-</button>
-
-</div>
-
-
-<!-- CHAIR -->
-
-<div class="card"
-onclick="showProduct('Chair','Comfortable wooden chair.','₹4,500','https://images.unsplash.com/photo-1551298370-9d3d53740c72',4500)">
-
-<img src="https://images.unsplash.com/photo-1551298370-9d3d53740c72">
-
-<h3>Chair</h3>
-
-<p>Comfortable wooden chair.</p>
-
-<p class="price">₹4,500</p>
-
-<p class="available">✅ Available</p>
-
-<button class="buy-btn"
-onclick="addToCart('Chair',4500);event.stopPropagation();">
-🛒 Add to Cart
-</button>
-
-<button class="buy-btn"
-onclick="openOrder('Chair');event.stopPropagation();">
-Buy Now
-</button>
-
-</div>
-
-
-<!-- ALMIRAH -->
-
-<div class="card"
-onclick="showProduct('Almirah','Spacious modern almirah.','₹22,000','https://images.unsplash.com/photo-1558997519-83ea9252edf8',22000)">
-
-<img src="https://images.unsplash.com/photo-1558997519-83ea9252edf8">
-
-<h3>Almirah</h3>
-
-<p>Spacious modern almirah.</p>
-
-<p class="price">₹22,000</p>
-
-<p class="available">✅ Available</p>
-
-<button class="buy-btn"
-onclick="addToCart('Almirah',22000);event.stopPropagation();">
-🛒 Add to Cart
-</button>
-
-<button class="buy-btn"
-onclick="openOrder('Almirah');event.stopPropagation();">
-Buy Now
-</button>
-
-</div>
-
-
-<!-- CENTER TABLE -->
-
-<div class="card"
-onclick="showProduct('Center Table','Stylish living room table.','₹8,000','https://images.unsplash.com/photo-1618220179428-22790b461013',8000)">
-
-<img src="https://images.unsplash.com/photo-1618220179428-22790b461013">
-
-<h3>Center Table</h3>
-
-<p>Stylish living room table.</p>
-
-<p class="price">₹8,000</p>
-
-<p class="available">✅ Available</p>
-
-<button class="buy-btn"
-onclick="addToCart('Center Table',8000);event.stopPropagation();">
-🛒 Add to Cart
-</button>
-
-<button class="buy-btn"
-onclick="openOrder('Center Table');event.stopPropagation();">
-Buy Now
-</button>
-
-</div>
-
-
-<!-- WOODEN DOOR -->
-
-<div class="card"
-onclick="showProduct('Wooden Door','Premium wooden door.','₹15,000','https://images.unsplash.com/photo-1600210492486-724fe5c67fb0',15000)">
-
-<img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0">
-
-<h3>Wooden Door</h3>
-
-<p>Premium wooden door.</p>
-
-<p class="price">₹15,000</p>
-
-<p class="available">✅ Available</p>
-
-<button class="buy-btn"
-onclick="addToCart('Wooden Door',15000);event.stopPropagation();">
-🛒 Add to Cart
-</button>
-
-<button class="buy-btn"
-onclick="openOrder('Wooden Door');event.stopPropagation();">
-Buy Now
-</button>
-
-</div>
-
-
-<!-- OFFICE CHAIR -->
-
-<div class="card"
-onclick="showProduct('Office Chair','Comfortable office chair.','₹7,500','https://images.unsplash.com/photo-1598300042247-d088f8ab3a91',7500)">
-
-<img src="https://images.unsplash.com/photo-1598300042247-d088f8ab3a91">
-
-<h3>Office Chair</h3>
-
-<p>Comfortable office chair.</p>
-
-<p class="price">₹7,500</p>
-
-<p class="available">✅ Available</p>
-
-<button class="buy-btn"
-onclick="addToCart('Office Chair',7500);event.stopPropagation();">
-🛒 Add to Cart
-</button>
-
-<button class="buy-btn"
-onclick="openOrder('Office Chair');event.stopPropagation();">
-Buy Now
-</button>
-
-</div>
-
-
-<!-- WARDROBE -->
-
-<div class="card"
-onclick="showProduct('Wardrobe','Modern bedroom wardrobe.','₹28,000','https://images.unsplash.com/photo-1550226891-ef816aed4a98',28000)">
-
-<img src="https://images.unsplash.com/photo-1550226891-ef816aed4a98">
-
-<h3>Wardrobe</h3>
-
-<p>Modern bedroom wardrobe.</p>
-
-<p class="price">₹28,000</p>
-
-<p class="available">✅ Available</p>
-
-<button class="buy-btn"
-onclick="addToCart('Wardrobe',28000);event.stopPropagation();">
-🛒 Add to Cart
-</button>
-
-<button class="buy-btn"
-onclick="openOrder('Wardrobe');event.stopPropagation();">
-Buy Now
-</button>
-
-</div>
-
-
-<!-- BOOKSHELF -->
-
-<div class="card"
-onclick="showProduct('Bookshelf','Beautiful wooden bookshelf.','₹10,000','https://images.unsplash.com/photo-1592078615290-033ee584e267',10000)">
-
-<img src="https://images.unsplash.com/photo-1592078615290-033ee584e267">
-
-<h3>Bookshelf</h3>
-
-<p>Beautiful wooden bookshelf.</p>
-
-<p class="price">₹10,000</p>
-
-<p class="available">✅ Available</p>
-
-<button class="buy-btn"
-onclick="addToCart('Bookshelf',10000);event.stopPropagation();">
-🛒 Add to Cart
-</button>
-
-<button class="buy-btn"
-onclick="openOrder('Bookshelf');event.stopPropagation();">
-Buy Now
-</button>
-
-</div>
-
-</section>
-
-
-<!-- PRODUCT DETAILS POPUP -->
-
-<div id="productModal">
-
-<div class="modal-box">
-
-<span class="close-btn" onclick="closeProduct()">×</span>
-
-<img id="modalImage">
-
-<h2 id="modalName"></h2>
-
-<p id="modalDescription"></p>
-
-<p class="modal-price" id="modalPrice"></p>
-
-<p class="modal-available">
-✅ Available
-</p>
-
-<button class="modal-buy"
-onclick="addCurrentProductToCart()">
-🛒 Add to Cart
-</button>
-
-<button class="modal-buy"
-onclick="buyFromModal()">
-Buy Now
-</button>
-
-</div>
-
-</div>
-
-
-<!-- CART -->
-
-<section id="cartSection">
-
-<h2>🛒 Your Shopping Cart</h2>
-
-<div id="cartItems"></div>
-
-<div class="cart-total">
-Total: ₹<span id="cartTotal">0</span>
-</div>
-
-<button class="cart-whatsapp"
-onclick="sendCartToWhatsApp()">
-📱 Order Cart on WhatsApp
-</button>
-
-</section>
-
-
-<!-- ABOUT -->
-
-<section class="about" id="about">
-
-<h2>About Anshiv Furniture</h2>
-
-<p>
-Welcome to Anshiv Furniture. We provide beautiful,
-comfortable and quality furniture for your home and office.
-Our goal is to provide stylish furniture at reasonable prices
-with excellent customer service.
-</p>
-
-</section>
-
-
-<!-- REVIEWS -->
-
-<section class="reviews" id="reviews">
-
-<h2 class="title">Customer Reviews</h2>
-
-<div class="review">
-⭐️⭐️⭐️⭐️⭐️
-<p>"Very beautiful furniture and good quality."</p>
-<b>Rahul</b>
-</div>
-
-<div class="review">
-⭐️⭐️⭐️⭐️⭐️
-<p>"The sofa quality is excellent."</p>
-<b>Amit</b>
-</div>
-
-</section>
-
-
-<!-- ORDER FORM -->
-
-<section id="orderSection">
-
-<h2>Place Your Order</h2>
-
-<p>
-<b>Selected Product:</b>
-<span id="selectedProduct"></span>
-</p>
-
-<form onsubmit="sendWhatsApp(event)">
-
-<label>Your Name</label>
-
-<input type="text"
-id="name"
-placeholder="Enter your name"
-required>
-
-<label>Mobile Number</label>
-
-<input type="tel"
-id="mobile"
-placeholder="Enter mobile number"
-maxlength="10"
-required>
-
-<label>Address</label>
-
-<textarea
-id="address"
-placeholder="Enter your full address"
-required></textarea>
-
-<button class="whatsapp-btn" type="submit">
-Order on WhatsApp 📱
-</button>
-
-</form>
-
-</section>
-
-
-<!-- CONTACT -->
-
-<section class="contact" id="contact">
-
-<h2>Contact Us</h2>
-
-<p>
-📞 Phone:
-<a href="tel:8579914270">8579914270</a>
-</p>
-
-<p>
-📱 WhatsApp:
-<a href="https://wa.me/918579914270" target="_blank">
-Chat on WhatsApp
-</a>
-</p>
-
-<p>
-📍 Address: At-Malaypur, Dist.- Jamui, Bihar - 811313
-</p>
-
-<a class="map-btn"
-href="https://maps.app.goo.gl/JTsVc1KC7XA6JFsy8"
-target="_blank">
-📍 View Location on Google Maps
-</a>
-
-</section>
 <!DOCTYPE html>
 <html lang="hi">
 <head>
@@ -950,315 +9,315 @@ target="_blank">
 <style>
 
 *{
-box-sizing:border-box;
-scroll-behavior:smooth;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
 }
 
 body{
-margin:0;
-font-family:Arial,sans-serif;
-background:#f8f3ee;
-color:#333;
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#f8f3ee;
+    color:#333;
 }
 
 /* HEADER */
 
 header{
-background:#4b2e1f;
-color:white;
-padding:25px 15px;
-text-align:center;
+    background:#4b2e1f;
+    color:white;
+    padding:25px 15px;
+    text-align:center;
 }
 
 header h1{
-margin:0;
-font-size:35px;
+    margin:0;
+    font-size:35px;
 }
 
 header p{
-margin:8px 0 0;
-font-size:17px;
+    margin:8px 0 0;
+    font-size:17px;
 }
 
 /* NAVIGATION */
 
 nav{
-background:#2d1b12;
-padding:12px;
-text-align:center;
-position:sticky;
-top:0;
-z-index:1000;
+    background:#2d1b12;
+    padding:12px;
+    text-align:center;
+    position:sticky;
+    top:0;
+    z-index:1000;
 }
 
 nav a{
-color:white;
-text-decoration:none;
-margin:0 10px;
-font-weight:bold;
+    color:white;
+    text-decoration:none;
+    margin:0 10px;
+    font-weight:bold;
 }
 
 nav a:hover{
-color:#ffb36b;
+    color:#ffb36b;
 }
 
 /* HERO */
 
 .hero{
-text-align:center;
-padding:60px 20px;
-background:#ead8c8;
+    text-align:center;
+    padding:60px 20px;
+    background:#ead8c8;
 }
 
 .hero h2{
-font-size:40px;
-color:#4b2e1f;
-margin:0 0 15px;
+    font-size:40px;
+    color:#4b2e1f;
+    margin:0 0 15px;
 }
 
 .hero p{
-font-size:20px;
+    font-size:20px;
 }
 
 /* BUTTON */
 
 .btn{
-display:inline-block;
-background:#d2691e;
-color:white;
-padding:13px 22px;
-border-radius:8px;
-text-decoration:none;
-font-weight:bold;
-border:none;
-cursor:pointer;
+    display:inline-block;
+    background:#d2691e;
+    color:white;
+    padding:13px 22px;
+    border-radius:8px;
+    text-decoration:none;
+    font-weight:bold;
+    border:none;
+    cursor:pointer;
 }
 
 .btn:hover{
-background:#4b2e1f;
+    background:#4b2e1f;
 }
 
 /* PRODUCTS */
 
 section{
-padding:50px 20px;
+    padding:50px 20px;
 }
 
 .section-title{
-text-align:center;
-color:#4b2e1f;
-font-size:32px;
-margin-bottom:10px;
+    text-align:center;
+    color:#4b2e1f;
+    font-size:32px;
+    margin-bottom:10px;
 }
 
 .section-subtitle{
-text-align:center;
-color:#666;
-margin-bottom:35px;
+    text-align:center;
+    color:#666;
+    margin-bottom:35px;
 }
 
 .products{
-max-width:1200px;
-margin:auto;
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:25px;
+    max-width:1200px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:25px;
 }
 
 .product-card{
-background:white;
-border-radius:15px;
-overflow:hidden;
-box-shadow:0 5px 15px rgba(0,0,0,.15);
-transition:.3s;
+    background:white;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 5px 15px rgba(0,0,0,.15);
+    transition:.3s;
 }
 
 .product-card:hover{
-transform:translateY(-6px);
+    transform:translateY(-6px);
 }
 
 .product-card img{
-width:100%;
-height:220px;
-object-fit:cover;
+    width:100%;
+    height:220px;
+    object-fit:cover;
 }
 
 .product-info{
-padding:18px;
+    padding:18px;
 }
 
 .product-info h3{
-color:#4b2e1f;
-margin-top:0;
-font-size:21px;
+    color:#4b2e1f;
+    margin-top:0;
+    font-size:21px;
 }
 
 .product-info p{
-line-height:1.5;
+    line-height:1.5;
 }
 
 .price{
-color:#b44c00;
-font-size:18px;
-font-weight:bold;
+    color:#b44c00;
+    font-size:18px;
+    font-weight:bold;
 }
 
 .profit{
-color:green;
-font-weight:bold;
+    color:green;
+    font-weight:bold;
 }
 
 .available{
-color:#008000;
-font-weight:bold;
+    color:#008000;
+    font-weight:bold;
 }
 
 .product-buttons{
-display:flex;
-gap:8px;
-flex-wrap:wrap;
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap;
 }
 
 .product-buttons button{
-border:0;
-padding:11px 14px;
-border-radius:7px;
-cursor:pointer;
-color:white;
-font-weight:bold;
-background:#d2691e;
+    border:0;
+    padding:11px 14px;
+    border-radius:7px;
+    cursor:pointer;
+    color:white;
+    font-weight:bold;
+    background:#d2691e;
 }
 
 .product-buttons .buy{
-background:#4b2e1f;
+    background:#4b2e1f;
 }
 
 /* CART */
 
 #cart{
-background:#fff;
+    background:#fff;
 }
 
 .cart-box{
-max-width:700px;
-margin:auto;
-background:white;
-padding:25px;
-border-radius:15px;
-box-shadow:0 5px 15px rgba(0,0,0,.12);
+    max-width:700px;
+    margin:auto;
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,.12);
 }
 
 .cart-item{
-display:flex;
-justify-content:space-between;
-border-bottom:1px solid #ddd;
-padding:12px 0;
+    display:flex;
+    justify-content:space-between;
+    border-bottom:1px solid #ddd;
+    padding:12px 0;
 }
 
 .cart-total{
-font-size:22px;
-font-weight:bold;
-color:#4b2e1f;
-margin-top:20px;
+    font-size:22px;
+    font-weight:bold;
+    color:#4b2e1f;
+    margin-top:20px;
 }
 
 /* ORDER */
 
 #orderSection{
-background:#ead8c8;
+    background:#ead8c8;
 }
 
 .order-box{
-max-width:600px;
-margin:auto;
-background:white;
-padding:25px;
-border-radius:15px;
-box-shadow:0 5px 15px rgba(0,0,0,.12);
+    max-width:600px;
+    margin:auto;
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,.12);
 }
 
 .order-box input,
 .order-box textarea{
-width:100%;
-padding:13px;
-margin:8px 0 15px;
-border:1px solid #ccc;
-border-radius:7px;
-font-size:16px;
+    width:100%;
+    padding:13px;
+    margin:8px 0 15px;
+    border:1px solid #ccc;
+    border-radius:7px;
+    font-size:16px;
 }
 
 .order-box button{
-width:100%;
-padding:14px;
-background:#25D366;
-color:white;
-border:0;
-border-radius:8px;
-font-size:17px;
-font-weight:bold;
-cursor:pointer;
+    width:100%;
+    padding:14px;
+    background:#25D366;
+    color:white;
+    border:0;
+    border-radius:8px;
+    font-size:17px;
+    font-weight:bold;
+    cursor:pointer;
 }
 
 /* ABOUT */
 
 .about{
-max-width:900px;
-margin:auto;
-text-align:center;
-line-height:1.7;
+    max-width:900px;
+    margin:auto;
+    text-align:center;
+    line-height:1.7;
 }
 
 /* CONTACT */
 
 .contact{
-text-align:center;
+    text-align:center;
 }
 
 .contact-box{
-max-width:700px;
-margin:auto;
-background:white;
-padding:25px;
-border-radius:15px;
-box-shadow:0 5px 15px rgba(0,0,0,.12);
+    max-width:700px;
+    margin:auto;
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,.12);
 }
 
 .whatsapp{
-background:#25D366;
-color:white;
-padding:13px 20px;
-display:inline-block;
-border-radius:8px;
-text-decoration:none;
-font-weight:bold;
+    background:#25D366;
+    color:white;
+    padding:13px 20px;
+    display:inline-block;
+    border-radius:8px;
+    text-decoration:none;
+    font-weight:bold;
 }
 
 /* FOOTER */
 
 footer{
-background:#2d1b12;
-color:white;
-text-align:center;
-padding:25px 15px;
+    background:#2d1b12;
+    color:white;
+    text-align:center;
+    padding:25px 15px;
 }
 
 /* MOBILE */
 
 @media(max-width:600px){
 
-header h1{
-font-size:28px;
-}
+    header h1{
+        font-size:28px;
+    }
 
-nav a{
-display:inline-block;
-margin:5px;
-font-size:14px;
-}
+    nav a{
+        display:inline-block;
+        margin:5px;
+        font-size:14px;
+    }
 
-.hero h2{
-font-size:30px;
-}
+    .hero h2{
+        font-size:30px;
+    }
 
 }
 
@@ -1271,8 +330,8 @@ font-size:30px;
 <!-- HEADER -->
 
 <header>
-<h1>ANSHIV FURNITURE</h1>
-<p>Beautiful Furniture For Your Beautiful Home</p>
+    <h1>ANSHIV FURNITURE</h1>
+    <p>Beautiful Furniture For Your Beautiful Home</p>
 </header>
 
 
@@ -1402,105 +461,564 @@ Buy Now
 </button>
 
 <button class="buy"
-onclick="openOrder('Pooja Chowki',150
+onclick="openOrder('Pooja Chowki',1500)">
+Buy Now
+</button>
+
+</div>
+
+</div>
+</div>
+
+
+<!-- 3 -->
+
+<div class="product-card">
+
+<img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=700&q=80">
+
+<div class="product-info">
+
+<h3>3. Laptop / Study Table</h3>
+
+<p>
+पढ़ाई, Laptop और Work From Home के लिए Compact Table।
+</p>
+
+<p>🔨 <b>बनाने की लागत:</b> ₹1,800 – ₹2,500</p>
+
+<p class="price">
+💰 बिक्री कीमत: ₹3,000 – ₹3,500
+</p>
+
+<p class="profit">
+📈 Profit: ₹1,000 – ₹1,200
+</p>
+
+<p class="available">
+✅ Available
+</p>
+
+<div class="product-buttons">
+
+<button onclick="addToCart('Laptop Study Table',3000)">
+🛒 Add to Cart
+</button>
+
+<button class="buy"
+onclick="openOrder('Laptop Study Table',3000)">
+Buy Now
+</button>
+
+</div>
+
+</div>
+</div>
+
+
+<!-- 4 -->
+
+<div class="product-card">
+
+<img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=700&q=80">
+
+<div class="product-info">
+
+<h3>4. Bedside Table</h3>
+
+<p>
+Bed के पास रखने के लिए छोटा और सुंदर Table।
+</p>
+
+<p>🔨 <b>बनाने की लागत:</b> ₹1,200 – ₹1,800</p>
+
+<p class="price">
+💰 बिक्री कीमत: ₹2,000 – ₹2,500
+</p>
+
+<p class="profit">
+📈 Profit: ₹700 – ₹1,000
+</p>
+
+<p class="available">
+✅ Available
+</p>
+
+<div class="product-buttons">
+
+<button onclick="addToCart('Bedside Table',2000)">
+🛒 Add to Cart
+</button>
+
+<button class="buy"
+onclick="openOrder('Bedside Table',2000)">
+Buy Now
+</button>
+
+</div>
+
+</div>
+</div>
+
+
+<!-- 5 -->
+
+<div class="product-card">
+
+<img src="https://images.unsplash.com/photo-1558997519-83ea9252edf8?auto=format&fit=crop&w=700&q=80">
+
+<div class="product-info">
+
+<h3>5. Small Shoe Rack</h3>
+
+<p>
+घर के Entrance के लिए Compact 3–4 Layer Shoe Rack।
+</p>
+
+<p>🔨 <b>बनाने की लागत:</b> ₹1,500 – ₹2,500</p>
+
+<p class="price">
+💰 बिक्री कीमत: ₹2,500 – ₹4,000
+</p>
+
+<p class="profit">
+📈 Profit: ₹1,000 – ₹1,500
+</p>
+
+<p class="available">
+✅ Available
+</p>
+
+<div class="product-buttons">
+
+<button onclick="addToCart('Small Shoe Rack',2500)">
+🛒 Add to Cart
+</button>
+
+<button class="buy"
+onclick="openOrder('Small Shoe Rack',2500)">
+Buy Now
+</button>
+
+</div>
+
+</div>
+</div>
+
+
+<!-- 6 -->
+
+<div class="product-card">
+
+<img src="https://images.unsplash.com/photo-1594620302200-9a762244a156?auto=format&fit=crop&w=700&q=80">
+
+<div class="product-info">
+
+<h3>6. Wall / Book Shelf</h3>
+
+<p>
+Books, शोपीस और Plants रखने के लिए सुंदर Wall Shelf।
+</p>
+
+<p>🔨 <b>बनाने की लागत:</b> ₹800 – ₹1,500</p>
+
+<p class="price">
+💰 बिक्री कीमत: ₹1,500 – ₹2,500
+</p>
+
+<p class="profit">
+📈 Profit: ₹700 – ₹1,000
+</p>
+
+<p class="available">
+✅ Available
+</p>
+
+<div class="product-buttons">
+
+<button onclick="addToCart('Wall Book Shelf',1500)">
+🛒 Add to Cart
+</button>
+
+<button class="buy"
+onclick="openOrder('Wall Book Shelf',1500)">
+Buy Now
+</button>
+
+</div>
+
+</div>
+</div>
+
+
+<!-- 7 -->
+
+<div class="product-card">
+
+<img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=700&q=80">
+
+<div class="product-info">
+
+<h3>7. Kitchen Rack</h3>
+
+<p>
+मसाले, बर्तन और Kitchen सामान रखने के लिए Compact Rack।
+</p>
+
+<p>🔨 <b>बनाने की लागत:</b> ₹1,000 – ₹1,800</p>
+
+<p class="price">
+💰 बिक्री कीमत: ₹1,800 – ₹3,000
+</p>
+
+<p class="profit">
+📈 Profit: ₹600 – ₹1,200
+</p>
+
+<p class="available">
+✅ Available
+</p>
+
+<div class="product-buttons">
+
+<button onclick="addToCart('Kitchen Rack',1800)">
+🛒 Add to Cart
+</button>
+
+<button class="buy"
+onclick="openOrder('Kitchen Rack',1800)">
+Buy Now
+</button>
+
+</div>
+
+</div>
+</div>
+
+
+<!-- 8 -->
+
+<div class="product-card">
+
+<img src="https://images.unsplash.com/photo-1485955900006-10f4d324d411?auto=format&fit=crop&w=700&q=80">
+
+<div class="product-info">
+
+<h3>8. Wooden Plant Stand</h3>
+
+<p>
+घर, Balcony और Office के लिए सुंदर Multi-Level Plant Stand।
+</p>
+
+<p>🔨 <b>बनाने की लागत:</b> ₹500 – ₹800</p>
+
+<p class="price">
+💰 बिक्री कीमत: ₹1,000 – ₹1,500
+</p>
+
+<p class="profit">
+📈 Profit: ₹500 – ₹700
+</p>
+
+<p class="available">
+✅ Available
+</p>
+
+<div class="product-buttons">
+
+<button onclick="addToCart('Wooden Plant Stand',1000)">
+🛒 Add to Cart
+</button>
+
+<button class="buy"
+onclick="openOrder('Wooden Plant Stand',1000)">
+Buy Now
+</button>
+
+</div>
+
+</div>
+</div>
+
+
+<!-- 9 -->
+
+<div class="product-card">
+
+<img src="https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?auto=format&fit=crop&w=700&q=80">
+
+<div class="product-info">
+
+<h3>9. Wooden Stool</h3>
+
+<p>
+घर, Kitchen और Office के लिए मजबूत Wooden Stool।
+</p>
+
+<p>🔨 <b>बनाने की लागत:</b> ₹500 – ₹800</p>
+
+<p class="price">
+💰 बिक्री कीमत: ₹1,000 – ₹1,200
+</p>
+
+<p class="profit">
+📈 Profit: ₹500 – ₹600
+</p>
+
+<p class="available">
+✅ Available
+</p>
+
+<div class="product-buttons">
+
+<button onclick="addToCart('Wooden Stool',1000)">
+🛒 Add to Cart
+</button>
+
+<button class="buy"
+onclick="openOrder('Wooden Stool',1000)">
+Buy Now
+</button>
+
+</div>
+
+</div>
+</div>
+
+
+<!-- 10 -->
+
+<div class="product-card">
+
+<img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=700&q=80">
+
+<div class="product-info">
+
+<h3>10. Key Holder + Shelf</h3>
+
+<p>
+घर के Entrance और Office के लिए Key Holder के साथ छोटी Shelf।
+</p>
+
+<p>🔨 <b>बनाने की लागत:</b> ₹300 – ₹500</p>
+
+<p class="price">
+💰 बिक्री कीमत: ₹600 – ₹800
+</p>
+
+<p class="profit">
+📈 Profit: ₹300 – ₹400
+</p>
+
+<p class="available">
+✅ Available
+</p>
+
+<div class="product-buttons">
+
+<button onclick="addToCart('Key Holder Shelf',600)">
+🛒 Add to Cart
+</button>
+
+<button class="buy"
+onclick="openOrder('Key Holder Shelf',600)">
+Buy Now
+</button>
+
+</div>
+
+</div>
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- CART -->
+
+<section id="cart">
+
+<h2 class="section-title">
+🛒 Your Cart
+</h2>
+
+<div class="cart-box">
+
+<div id="cartItems">
+Cart अभी खाली है।
+</div>
+
+<div class="cart-total">
+Total: ₹<span id="cartTotal">0</span>
+</div>
+
+<br>
+
+<button class="btn" onclick="sendCartToWhatsApp()">
+📱 WhatsApp पर Order भेजें
+</button>
+
+</div>
+
+</section>
+
+
+<!-- ORDER -->
+
+<section id="orderSection">
+
+<h2 class="section-title">
+📦 Order Now
+</h2>
+
+<div class="order-box">
+
+<h3 id="selectedProduct">
+Product Order
+</h3>
+
+<form onsubmit="sendWhatsApp(event)">
+
+<input
+type="text"
+id="customerName"
+placeholder="आपका नाम"
+required>
+
+<input
+type="tel"
+id="customerMobile"
+placeholder="Mobile Number"
+required>
+
+<textarea
+id="customerAddress"
+rows="4"
+placeholder="पूरा Address"
+required></textarea>
+
+<button type="submit">
+📱 WhatsApp पर Order करें
+</button>
+
+</form>
+
+</div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section id="about">
+
+<h2 class="section-title">
+🏠 About Anshiv Furniture
+</h2>
+
+<div class="about">
+
+<p>
+Anshiv Furniture में हम घर और ऑफिस के लिए
+मजबूत, सुंदर और किफायती Furniture उपलब्ध कराते हैं।
+</p>
+
+<p>
+हमारा उद्देश्य है —
+<b>Quality Furniture | Best Price | Happy Customers</b>
+</p>
+
+</div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+<h2 class="section-title">
+📞 Contact Us
+</h2>
+
+<div class="contact-box">
+
+<p><b>ANSHIV FURNITURE</b></p>
+
+<p>
+📱 8579914270
+</p>
+
+<p>
+📍 At-Malaypur, Dist.- Jamui, Bihar - 811313
+</p>
+
+<a
+class="whatsapp"
+href="https://wa.me/918579914270"
+target="_blank">
+
+💬 WhatsApp Chat
+
+</a>
+
+<br><br>
+
+<a
+class="btn"
+href="https://maps.app.goo.gl/JTsVc1KC7XA6JFsy8"
+target="_blank">
+
+📍 View Location on Google Maps
+
+</a>
+
+</div>
+
+</section>
 
 
 <!-- FOOTER -->
 
 <footer>
 
-<p>© 2026 Anshiv Furniture</p>
+<h3>ANSHIV FURNITURE</h3>
 
-<p>Quality Furniture | Best Price | Happy Customers</p>
+<p>
+Quality Furniture | Best Price | Happy Customers
+</p>
+
+<p>
+© 2026 Anshiv Furniture
+</p>
 
 </footer>
 
 
+<!-- JAVASCRIPT -->
+
 <script>
 
-let selectedProduct="";
-let modalProduct="";
-let modalPriceValue=0;
+let cart = [];
 
-let cart=[];
-
-
-/* PRODUCT DETAILS */
-
-function showProduct(name,description,price,image,priceValue){
-
-modalProduct=name;
-modalPriceValue=priceValue;
-
-document.getElementById("modalName").innerText=name;
-
-document.getElementById("modalDescription").innerText=description;
-
-document.getElementById("modalPrice").innerText=price;
-
-document.getElementById("modalImage").src=image;
-
-document.getElementById("productModal").style.display="block";
-}
-
-
-/* CLOSE PRODUCT */
-
-function closeProduct(){
-
-document.getElementById("productModal").style.display="none";
-}
-
-
-/* BUY FROM POPUP */
-
-function buyFromModal(){
-
-closeProduct();
-
-openOrder(modalProduct);
-}
-
-
-/* ADD CURRENT PRODUCT */
-
-function addCurrentProductToCart(){
-
-addToCart(modalProduct,modalPriceValue);
-
-closeProduct();
-}
+let selectedProduct = "";
+let selectedPrice = 0;
 
 
 /* ADD TO CART */
 
-function addToCart(name,price){
+function addToCart(product, price){
 
-let existingProduct=cart.find(function(item){
+    cart.push({
+        name:product,
+        price:price
+    });
 
-return item.name===name;
+    updateCart();
 
-});
-
-
-if(existingProduct){
-
-existingProduct.quantity++;
-
-}else{
-
-cart.push({
-name:name,
-price:price,
-quantity:1
-});
-
-}
-
-
-updateCart();
-
-alert(name+" Cart में add हो गया! 🛒");
+    alert(product + " Cart में Add हो गया ✅");
 }
 
 
@@ -1508,211 +1026,170 @@ alert(name+" Cart में add हो गया! 🛒");
 
 function updateCart(){
 
-let cartItems=document.getElementById("cartItems");
+    let cartItems =
+    document.getElementById("cartItems");
 
-let cartCount=document.getElementById("cartCount");
+    let cartCount =
+    document.getElementById("cartCount");
 
-let cartTotal=document.getElementById("cartTotal");
+    let cartTotal =
+    document.getElementById("cartTotal");
 
+    cartCount.innerText = cart.length;
 
-cartItems.innerHTML="";
+    if(cart.length === 0){
 
+        cartItems.innerHTML =
+        "Cart अभी खाली है।";
 
-let totalItems=0;
+        cartTotal.innerText = "0";
 
-let totalPrice=0;
+        return;
+    }
 
+    let html = "";
+    let total = 0;
 
-cart.forEach(function(item,index){
+    cart.forEach(function(item,index){
 
-totalItems += item.quantity;
+        total += item.price;
 
-totalPrice += item.price * item.quantity;
+        html += `
+        <div class="cart-item">
 
+            <span>
+            ${item.name}
+            </span>
 
-cartItems.innerHTML +=
+            <span>
+            ₹${item.price}
+            <button
+            onclick="removeCart(${index})"
+            style="margin-left:8px;border:0;background:#c00;color:white;border-radius:5px;padding:5px 8px;">
+            X
+            </button>
+            </span>
 
-'<div class="cart-item">'+
+        </div>
+        `;
 
-'<div class="cart-item-info">'+
+    });
 
-'<b>'+item.name+'</b><br>'+
+    cartItems.innerHTML = html;
 
-'₹'+item.price.toLocaleString("en-IN")+
-
-'</div>'+
-
-'<div class="quantity">'+
-
-'<button onclick="changeQuantity('+index+',-1)">−</button>'+
-
-'<span>'+item.quantity+'</span>'+
-
-'<button onclick="changeQuantity('+index+',1)">+</button>'+
-
-'</div>'+
-
-'<button class="remove-btn" onclick="removeFromCart('+index+')">🗑️</button>'+
-
-'</div>';
-
-});
-
-
-cartCount.innerText=totalItems;
-
-cartTotal.innerText=totalPrice.toLocaleString("en-IN");
-}
-
-
-/* CHANGE QUANTITY */
-
-function changeQuantity(index,change){
-
-cart[index].quantity += change;
-
-
-if(cart[index].quantity<=0){
-
-cart.splice(index,1);
+    cartTotal.innerText = total;
 
 }
 
 
-updateCart();
+/* REMOVE CART */
+
+function removeCart(index){
+
+    cart.splice(index,1);
+
+    updateCart();
+
 }
 
 
-/* REMOVE */
+/* BUY NOW */
 
-function removeFromCart(index){
+function openOrder(product,price){
 
-cart.splice(index,1);
+    selectedProduct = product;
+    selectedPrice = price;
 
-updateCart();
+    document.getElementById("selectedProduct").innerHTML =
+    "Order: " + product + " — ₹" + price;
+
+    document.getElementById("orderSection")
+    .scrollIntoView({
+        behavior:"smooth"
+    });
+
 }
 
 
-/* OPEN CART */
-
-function openCart(){
-
-document.getElementById("cartSection").style.display="block";
-
-document.getElementById("cartSection").scrollIntoView({
-behavior:"smooth"
-});
-
-updateCart();
-}
-
-
-/* ORDER */
-
-function openOrder(product){
-
-selectedProduct=product;
-
-document.getElementById("selectedProduct").innerText=product;
-
-document.getElementById("orderSection").style.display="block";
-
-document.getElementById("orderSection").scrollIntoView({
-behavior:"smooth"
-});
-}
-
-
-/* NORMAL WHATSAPP ORDER */
+/* SEND SINGLE PRODUCT TO WHATSAPP */
 
 function sendWhatsApp(event){
 
-event.preventDefault();
+    event.preventDefault();
 
+    let name =
+    document.getElementById("customerName").value;
 
-let name=document.getElementById("name").value;
+    let mobile =
+    document.getElementById("customerMobile").value;
 
-let mobile=document.getElementById("mobile").value;
+    let address =
+    document.getElementById("customerAddress").value;
 
-let address=document.getElementById("address").value;
+    let message =
+    "🪑 ANSHIV FURNITURE ORDER%0A%0A" +
 
+    "Product: " + selectedProduct + "%0A" +
 
-let message=
+    "Price: ₹" + selectedPrice + "%0A%0A" +
 
-"🛋️ ANSHIV FURNITURE ORDER\n\n"+
+    "Customer Name: " + name + "%0A" +
 
-"Product: "+selectedProduct+"\n"+
+    "Mobile: " + mobile + "%0A" +
 
-"Customer Name: "+name+"\n"+
+    "Address: " + address;
 
-"Mobile: "+mobile+"\n"+
+    window.open(
+        "https://wa.me/918579914270?text=" + message,
+        "_blank"
+    );
 
-"Address: "+address;
-
-
-let whatsappNumber="918579914270";
-
-
-let url=
-
-"https://wa.me/"+
-whatsappNumber+
-"?text="+
-encodeURIComponent(message);
-
-
-window.open(url,"_blank");
 }
 
 
-/* CART WHATSAPP ORDER */
+/* SEND CART TO WHATSAPP */
 
 function sendCartToWhatsApp(){
 
-if(cart.length===0){
+    if(cart.length === 0){
 
-alert("आपका Cart खाली है। पहले Product Add करें।");
+        alert("Cart अभी खाली है।");
 
-return;
-}
+        return;
+    }
 
+    let message =
+    "🪑 ANSHIV FURNITURE ORDER%0A%0A";
 
-let message=
-"🛋️ ANSHIV FURNITURE CART ORDER\n\n";
+    let total = 0;
 
+    cart.forEach(function(item,index){
 
-let total=0;
+        message +=
+        (index+1) + ". " +
+        item.name +
+        " - ₹" +
+        item.price +
+        "%0A";
 
+        total += item.price;
 
-cart.forEach(function(item){
+    });
 
-let subtotal=item.price*item.quantity;
+    message +=
+    "%0ATotal: ₹" + total +
+    "%0A%0A" +
+    "कृपया Order की जानकारी भेजें।";
 
-total += subtotal;
+    window.open(
+        "https://wa.me/918579914270?text=" + message,
+        "_blank"
+    );
 
-
-message +=
-"Product: "+item.name+"\n"+
-"Quantity: "+item.quantity+"\n"+
-"Price: ₹"+item.price.toLocaleString("en-IN")+"\n"+
-"Subtotal: ₹"+subtotal.toLocaleString("en-IN")+"\n\n";
-});
-
-message += "Total: ₹"+total.toLocaleString("en-IN");
-
-let whatsappNumber="918579914270";
-
-let url=
-"https://wa.me/"+
-whatsappNumber+
-"?text="+
-encodeURIComponent(message);
-
-window.open(url,"_blank");
 }
 
 </script>
 
-</body>
-</html>
 
+</body>
+  </html>
